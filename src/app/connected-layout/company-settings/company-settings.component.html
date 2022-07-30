@@ -1,0 +1,198 @@
+<div>
+    <div class="user-info">
+        <!-- company avatar -->
+        <h1 style="font-size:bold;">{{companyName}}</h1>
+    </div>
+    <form [formGroup]="companyForm">
+        <section class="infomation-de-base">
+
+            <h3 class="section-title">{{ 'CompanySettings.InformationsBase' | translate }}</h3>
+            <div class="lign"></div>
+            
+                <div class="row inputs">
+                    <div class="col-md-3">
+                        <label class="input-title">{{ 'CompanySettings.NomEntreprise' | translate }}</label>
+                    </div>
+                    <div class="col-md-9 pen-color">
+                        <div class="d-flex justify-content-between ">
+                            <input type="text" class="form-control" formControlName="companyName"/>
+                            <span class="check" ></span>
+                            <span class="cancel"></span>
+                            <i class="fas fa-pen pen-position" ></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row inputs">
+                    <div class="col-md-3">
+                        <label class="input-title">{{ 'CompanySettings.AdresseEmail' | translate }}</label>
+                    </div>
+                    <div class="col-md-9 pen-color">
+                        <div class="d-flex justify-content-between ">
+                            <input type="text" class="form-control" formControlName="companyEmail"/>
+                            <span class="check" ></span>
+                            <span class="cancel"></span>
+                            <i class="fas fa-pen pen-position" ></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row inputs">
+                    <div class="col-md-3">
+                        <label class="input-title">{{ 'CompanySettings.NuméroTéléphone' | translate }}</label>
+                    </div>
+                    <div class="col-md-9 pen-color">
+                        <div class="d-flex justify-content-between ">
+                            <span class="check" ></span>
+                            <span class="cancel"></span>
+                            <input type="text" class="form-control" formControlName="phone" />
+                            <i class="fas fa-pen pen-position" ></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row inputs">
+                    <div class="col-md-3">
+                        <label class="input-title">{{ 'CompanySettings.Adresse' | translate }}</label>
+                    </div>
+                    <div class="col-md-9 pen-color">
+                        <div class="d-flex justify-content-between ">
+                            <span class="check" ></span>
+                            <span class="cancel"></span>
+                            <input type="text" class="form-control" formControlName="address" />
+                            <i class="fas fa-pen pen-position" ></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row inputs">
+                    <div class="col-md-3">
+                        <label class="input-title">{{ 'CompanySettings.ActivitéEntreprise' | translate }}</label>
+                    </div>
+                    <div class="col-md-9 pen-color">
+                        <div class="d-flex justify-content-between ">
+                            <span class="check" ></span>
+                            <span class="cancel"></span>
+                            <input type="text" class="form-control" formControlName="companyActivity" />
+                            <i class="fas fa-pen pen-position" ></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row inputs">
+                    <div class="col-md-3">
+                        <label class="input-title">{{ 'CompanySettings.NombreEmployés' | translate }}</label>
+                    </div>
+                    <div class="col-md-9 pen-color">
+                        <div class="d-flex justify-content-between ">
+                            <input type="text" class="form-control" formControlName="personalSize" />
+                            <span class="check" ></span>
+                            <span class="cancel"></span>
+                            <i class="fas fa-pen pen-position" ></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row inputs">
+                    <div class="col-md-3">
+                        <label class="input-title">{{ 'CompanySettings.HoraireTravail' | translate }}</label>
+                    </div>
+                    <div class="col-md-9 pen-color">
+                        <div class="d-flex justify-content-between ">
+                            <input type="text" class="form-control" formControlName="worktimetable" />
+                            <span class="check" ></span>
+                            <span class="cancel"></span>
+                            <i class="fas fa-pen pen-position" ></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row inputs">
+                    <div class="col-md-3">
+                        <label class="input-title">{{ 'CompanySettings.NombreCongé' | translate }}</label>
+                    </div>
+                    <div class="col-md-9 pen-color">
+                        <div class="d-flex justify-content-between ">
+                            <span class="check" ></span>
+                            <span class="cancel"></span>
+                            <input type="number" class="form-control" formControlName="numberofDaysTimeOff" />
+                            <i class="fas fa-pen pen-position" ></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row inputs">
+                    <div class="col-md-3">
+                        <label class="input-title">{{ 'CompanySettings.LesRepos' | translate }}</label>
+                    </div>
+                    <div class="col-md-9 pen-color">
+                        <div class="d-flex justify-content-between ">
+                            <span class="check" ></span>
+                            <span class="cancel"></span>
+                            <input type="text" class="form-control" formControlName="dayOff" />
+                            <i class="fas fa-pen pen-position" ></i>
+                        </div>
+                    </div>
+                </div>
+            
+        </section>
+
+        <section class="poste">
+            <h3 class="section-title">{{ 'CompanySettings.Poste' | translate }}</h3>
+            <div class="lign"></div>
+
+                <div class="row inputs">
+                    <div class="col-md-3">
+                        <label class="input-title">{{ 'CompanySettings.LesPostes' | translate }}</label>
+                    </div>
+                    <div class="col-md-9 " >
+                        <div class="d-flex justify-content-between ">
+                            <input type="text"  class="form-control" formControlName="jobs" />
+                            <span class="check" (click)="addJob()"></span>
+                            <span class="cancel"></span>
+                            <i class="fas fa-pen pen-position" ></i>
+                        </div>
+                        <div >
+                            <!-- <span *ngFor="let department in departments">{{department.departmentName}}</span> -->
+                            <div *ngFor="let job of jobs" class="departments-field">
+                                {{job.jobName}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="row inputs">
+                    <div class="col-md-3">
+                        <label class="input-title">{{ 'CompanySettings.LesDepartements' | translate }}</label>
+                    </div>
+                    <div class="col-md-9 ">
+                        <div class="d-flex justify-content-between ">
+                            <input type="text" class="form-control" formControlName="departments" />
+                            <span class="check" (click)="addDepartment()"></span>
+                            <span class="cancel"></span>
+                            <i class="fas fa-pen pen-position" ></i>
+                        </div>
+                        <div >
+                            <!-- <span *ngFor="let department in departments">{{department.departmentName}}</span> -->
+                            <div *ngFor="let department of departments" class="departments-field">
+                                {{department.departmentName}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row inputs">
+                    <div class="col-md-3">
+                        <label class="input-title">{{ 'CompanySettings.LesRôles' | translate }}</label>
+                    </div>
+                    <div class="col-md-9 pen-color">
+                        <div class="d-flex justify-content-between ">
+                            
+                        </div>
+                    </div>
+                </div>
+            
+        </section>
+    </form>
+</div>

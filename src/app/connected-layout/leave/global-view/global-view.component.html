@@ -1,0 +1,89 @@
+<div class="d-flex justify-content-between" style="margin-top: 10px;">
+    <div class="search">
+        <input type="text" placeholder=" &nbsp;Rechercher...." />
+        <i class="fa fa-search icon-search" aria-hidden="true"></i>
+    </div>
+    <div>
+        <select name="" class="filter">
+            <option value="" disabled selected>{{ 'GlobalView.FiltrerPar' | translate }}</option>
+            <option value="ABSENCE">{{ 'GlobalView.Absence' | translate }}</option>
+            <option value="PRESENCE">{{ 'GlobalView.Préssence' | translate }}</option>
+            <option value="DEPARTMENT">{{ 'GlobalView.Département' | translate }}</option>
+        </select>
+    </div>
+</div>
+
+<div class="row tab">
+        <div class="col-md-1 colonTitle" >{{ 'GlobalView.Photo' | translate }}</div>
+        <div class="col-md-3 colonTitle" >{{ 'GlobalView.NomPrénom' | translate }}</div>
+        <div class="col-md-2 colonTitle" >{{ 'GlobalView.Poste' | translate }}</div>
+        <div class="col-md-4 colonTitle" >{{ 'GlobalView.JoursCongéRestant' | translate }}</div>
+        <div class="col-md-2 colonTitle" >{{ 'GlobalView.Détails' | translate }}</div>    
+</div>
+
+
+
+<mat-accordion displayMode="" multi class="mat-table" is-open="true">
+
+
+    <mat-expansion-panel *ngFor="let item of globaTimeOffs">
+        <mat-expansion-panel-header class="mat-row">
+            <div class="row tab">
+                <div class="col-md-1 colonTitle" ><img src="../../../../assets/Logo/userIMG1.jpg" class="userimg"></div>
+                <div class="col-md-3 colonTitle" >{{item.user.firstname}} &nbsp; {{item.user.lastname}}</div>
+                <div class="col-md-2 colonTitle" >{{item.user.job?.jobName}}</div>
+                <div class="col-md-4 colonTitle" >{{item.user.timeOffDayRemains}} </div>
+                <div class="col-md-2 colonTitle" ></div>    
+            </div>
+        </mat-expansion-panel-header>
+        <mat-accordion>
+            
+                <div>
+                    <div class="row">
+                        <div class="col-md-3 ColonTitle">{{ 'GlobalView.DateDébut' | translate }}</div>
+                        <div class="col-md-3 ColonTitle">{{ 'GlobalView.NombreJours' | translate }}</div>
+                        <div class="col-md-2 ColonTitle">{{ 'GlobalView.TypeCongé' | translate }}</div>
+                        <div class="col-md-2 ColonTitle">{{ 'GlobalView.Raison' | translate }}</div>
+                        <div class="col-md-2 ColonTitle">{{ 'GlobalView.Etat' | translate }}</div>
+                    </div>
+                    <div class="row" *ngFor="let i of item.timeOffs ">
+                        <div class="col-md-3 colonTitle">{{i.startDate | date: 'mediumDate': undefined : 'fr'}} </div>
+                        <div class="col-md-3 colonTitle">{{i.numberOfDays}}</div>
+                        <div class="col-md-2 colonTitle">{{i.type}}</div>
+                        <div class="col-md-2 colonTitle">{{i.reason}}</div>
+                        <div class="col-md-2 colonTitle" 
+                                    [ngClass]="{ 'rejected': i.status==='REJECTED',
+                                                'accepted': i.status==='ACCEPTED',
+                                                'pending': i.status==='PENDING'}">{{i.status | titlecase}}</div>
+                    </div>
+                </div>
+            
+        </mat-accordion>
+    </mat-expansion-panel>
+</mat-accordion>
+
+<!-- <mat-accordion>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          This is the expansion title
+        </mat-panel-title>
+        <mat-panel-description>
+          This is a summary of the content
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>This is the primary content of the panel.</p>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Self aware panel
+        </mat-panel-title>
+        <mat-panel-description>
+          Currently I am {{panelOpenState ? 'open' : 'closed'}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+    </mat-expansion-panel>
+  </mat-accordion> -->

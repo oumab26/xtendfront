@@ -1,0 +1,412 @@
+{
+  "LOGIN": {
+    "title": "Log In",
+    "emailInput": "Username or Email",
+    "passwordInput": "Password",
+    "resterConnecte": "Stay connected!",
+    "mdpOublie":"Forgot your password?",
+    "btnConnecter": "Log In",
+    "btnCreer": "Create account",
+    "btn":"en",
+    "Inscription":"Registration",
+    "VousNavezPasCompte":"You don't have an account?"
+
+  },
+
+  "LOGININPUT":{
+    "emailInput":"User.user@user.com",
+    "passwordInput":"Enter your password"
+  },
+
+  "COMPANY": {
+    "Coordonnéesgernerale":"General contact details",
+    "nomResponsable":"Responsible Firstname",
+    "prenomResponsable":"Responsible Lastname",
+    "nomEntrepriseInput": "Company name",
+    "nbrEmployeInput": "Personal size",
+    "de":"from",
+    "employés":"Employee",
+    "Plusque":"More than",
+    "continueButton":"Continue",
+    "activiteEntrepriseInput": "Company activity",
+    "phoneInput":"Company phone",
+    "adresseInput": "Adress",
+    "userName":"Username",
+    "adresseMail":"E-mail",
+    "condition":"I accept the terms and conditions.",
+    "VousAvezCompte":"Already have an account?",
+    "Entreprise":"Company",
+    "Compte":"Account"
+  },
+ 
+  "companyPlaceholders":{
+    "nomResponsable":"Enter your Firstname",
+    "prenomResponsable":"Enter pour Lastname",
+    "nomEntrepriseInput": "Enter your company name",
+    "activiteEntrepriseInput": "Enter the activity of your company",
+    "phoneInput":"Enter your company phone",
+    "adresse":"Enter your adress",
+    "userName":"Enter your username",
+    "adresseMail":"Userbenuser@gmail.com",
+    "password":"Enter your password"
+  },
+
+  "sideBar": {
+    "Dashboard": "Dashboard",
+    "Equipe": "Team",
+    "Présence": "Presence",
+    "Autorisation": "Authorization",
+    "Dépenses":"Expenses",
+    "Salaires": "Salaires",
+    "Planification": "Planification",
+    "Recherche":"Research...",
+    "userName":"User User"
+  },
+  
+  "resetPassword":{
+    "undertitle1":"You will receive a code on this address.",
+    "seSouvenir":"Remember password",
+    "btnenvoyer":"Send",
+    "title2":"Verification",
+    "undertitle2":"Enter the verification code we just sent you on your email address.",
+    "pasDeCode":"you did not receive a code!",
+    "btnRenvoyer":"Resend",
+    "creerNvPassword":"Create a new password",
+    "notifNvPassword":"Your new password must be different from the password previously used",
+    "nvPassword":"New password",
+    "confirmerPassword":"Confirm the password",
+    "btnSauvegarder":"Save"
+
+  },
+
+  "connectedLayout":{
+
+    "sideBar": {
+    "Dashboard": "Dashboard",
+    "Equipe": "Team",
+    "Présence": "Presence",
+    "Autorisation": "Authorization",
+    "Dépenses":"Expenses",
+    "activity-report":"Activity report",
+    "Recherche":"Research...",
+    "userName":"User User"
+    },
+
+    "SeDéconnecter":"Sign out",
+    "Logout":"Logout",
+    "Profile":"Profile",
+    "ResetPassword":"Change your password",
+    "RéglageEntreprise":"Company settings"
+  },
+  "appointment":{
+    "Présence":"Presence",
+    "Pointage":"Pointing"
+  },
+  "ATTENDANCE":{
+    "Aujourdhui":"Today",
+    "Hier":"Yesterday",
+    "CetteSemaine":"This week",
+    "semainePrécédente":"The previous week",
+    "CeMois":"This month",
+    "moisPrécédent":"The previous week",
+    "Absence":"Absence",
+    "Préssence":"Presence",
+    "Département":"Department",
+    "Travailleà":"Work from",
+    "Bureau":"Office",
+    "voirPlus":"See more",
+    "clockIn":"clock In",
+    "clockout":"clock out"
+  },
+  "MarkAttendance":{
+    "HeureActuelle":"Actual hour",
+    "ClockIn":"Clock In",
+    "ClockOut":"Clock Out",
+    "Travailleà":"Work from",
+    "Bureau":"Office",
+    "Maison":"Home",
+    "Votrefréquentation":"Your attendance this week",
+    "Date":"Date",
+    "Statut":"Status",
+    "Details":"Details"
+  },
+
+  "CompanySettings":{
+    "InformationsBase":"Basic informations",
+    "NomEntreprise":"Company name",
+    "AdresseEmail":"E-mail",
+    "NuméroTéléphone":"Phone",
+    "Adresse":"Adress",
+    "ActivitéEntreprise":"Company Activity",
+    "NombreEmployés":"Personal size",
+    "HoraireTravail":"Work schedule",
+    "NombreCongé":"Number of days off",
+    "LesRepos":"Rest days",
+    "Poste":"Post",
+    "LesPostes":"Posts",
+    "LesDepartements":"Departements",
+    "LesRôles":"Roles"
+  },
+
+  "Dashboard":{
+    "Bonjour":"Good morning",
+    "VousAvezDesnouvellesDemandes":"Today you have new requests.",
+    "VérifierDemandes":"You have to check the leave requests and the outputs.",
+    "VOIRLESDEMANDES":"SEE REQUESTS",
+    "TravailDomicile":"Work at home",
+    "TravaillerBureau":"Work in office",
+    "Congé":"Leave",
+    "Sortie":"Exit",
+    "Achat":"Purchase",
+    "voirPlus":"See more",
+    "Anniversaires":" Today's birthdays",
+    "EquipePrésent":"Team present",
+    "Profil":"Profile",
+    "ComplétezVotreProfil":"Complete your profile",
+    "InformationsBase":"Basic informations",
+    "Poste":"Post",
+    "RéseauSocial":"Social networks",
+    "ans":"years",
+    "totalAchat":"Total purchase",
+    "depensePeriodique":"Yearly periodic expenses"
+  },
+
+  "exitPermissionResponse":{
+    "Nom":"Name",
+    "DateSortie":"Release date",
+    "De":"From",
+    "À":"To",
+    "Raison":"Reason",
+    "Action":"Action"
+  },
+
+  "purchaseResponse":{
+    "Nom":"name",
+    "Produit":"Product",
+    "Prix":"Price",
+    "Quantité":"Quantity",
+    "Fournisseur":"Provider",
+    "Action":"Action"
+  },
+
+  "timeOffResponse":{
+    "Nom":"Name",
+    "DateSortie":"Release date",
+    "NombreJours":"Number of days",
+    "Type":"Type",
+    "Raison":"Reason",
+    "Action":"Action"
+  },
+
+  "EXPENSES":{
+    "Achats":"Purchases",
+    "ApprobationsAttente":"Pending approvals",
+    "DépensesPériodiques":"Periodic expenses",
+    "Fournisseurs":"Providers"
+  },
+
+  "periodicExpenses":{
+    "AjouterDépense":"Add an expense",
+    "ListeFournisseurs":"List of Providers",
+    "NomDépense":"Expense name",
+    "PériodeTemps":"Period of time",
+    "Montant":"Amount",
+    "Remarque":"Note",
+    "Action":"Action",
+    "TitreDépense":"Expense title",
+    "LaPériode":"The period",
+    "Hebdomadaire":"Weekly",
+    "Bimensuel":"Bimonthly",
+    "Mensuel":"Monthly",
+    "Bimestriel":"Bimonthly",
+    "Trimestriel":"termly",
+    "Semestriel":"Biannual",
+    "Annuel":"Annual",
+    "ANNULER":"CANCEL",
+    "AJOUTER":"ADD",
+    "ModifierDépense":"Edit expense"
+  },
+
+  "providers":{
+    "ListeFournisseurs":"List of Providers",
+    "Nom":"Name",
+    "Email":"E-mail",
+    "Adresse":"Adress",
+    "Téléphone":"Phone",
+    "siteWeb":"Website",
+    "Action":"Action",
+    "AjoutFournisseur":"Add provider",
+    "NomFournisseur":"Provider name",
+    "mail":"E-mail",
+    "ANNULER":"CANCEL",
+    "AJOUTER":"ADD",
+    "ModifierFournisseur":"Edit provider"
+  },
+
+  "PURCHASES":{
+    "DemanderAchat":"Request a purchase",
+    "DemandeAttente":"Pending demands",
+    "Produit":"Product",
+    "Prix":"Price",
+    "Username":"name",
+    "Quantité":"Quantity",
+    "Lien":"Link",
+    "Besoin":"Need",
+    "Fournisseur":"Provider",
+    "Etat":"State",
+    "Action":"Action",
+    "Historique":"Purchase request history",
+    "Date":"Date",
+    "Raison":"Reason",
+    "AJOUTER":"ADD",
+    "ANNULER":"CANCEL",
+    "ModifierAchat":"Edit purchase",
+    "DemandesAchatAttente":"Pending purchase requests"
+  },
+
+  "LEAVE":{
+    "Autorisation":"Authorization",
+    "Congé":"Leave",
+    "Sortie":"Exit",
+    "ApprobationsAttente":"Pending approvals",
+    "VueGlobal":"Global view"
+  },
+
+  "exitPERMISSION":{
+    "DemanderSortie":"Exit demand",
+    "DemandeAttente":"Pending demands",
+    "DateSortie":"Exit date",
+    "De":"From",
+    "À":"To",
+    "Raison":"Reason",
+    "Etat":"State",
+    "historique":"Your history of exit requests",
+    "Lesheures":"Hours",
+    "ANNULER":"CANCEL",
+    "AJOUTER":"ADD"
+  },
+
+  "GlobalView":{
+    "FiltrerPar":"Filter by",
+    "Absence":"Absence",
+    "Préssence":"Presence",
+    "Département":"Departement",
+    "Photo":"Photo",
+    "NomPrénom":"Name",
+    "Poste":"Post",
+    "JoursCongéRestant":"Days of leave remaining",
+    "Détails":"Details",
+    "DateDébut":"Start date",
+    "NombreJours":"Number of days",
+    "TypeCongé":"Type",
+    "Raison":"Reason",
+    "Etat":"State"
+  },
+
+  "LeaveResponse":{
+    "DemandesSorties":"Requests for outings",
+    "Photo":"Photo",
+    "NomPrénom":"Name",
+    "DateSortie":"Exit date",
+    "De":"From",
+    "À":"To",
+    "Raison":"Reqson",
+    "Etat":"State",
+    "DemandesCongés":"Leave requests",
+    "NombreJours":"Number of days",
+    "Type":"Type",
+    "DateDébut":"Start date",
+    "Action":"Action"
+  },
+
+  "TimeOff":{
+    "DemanderCongé":"Request time off",
+    "DemandeAttente":"Pending request",
+    "DateDébut":"Start date",
+    "NombreJours":"Number of days",
+    "TypeCongé":"Type",
+    "Raison":"Reason",
+    "Etat":"State",
+    "Historique":"History of leave requests",
+    "ANNULER":"CANCEL",
+    "AJOUTER":"ADD"
+  },
+
+  "profile":{
+    "ChangerMotPasse":"Change your password",
+    "InformationsBase":"Basic informations",
+    "Poste":"Post",
+    "RéseauSocial":"Social networks",
+    "Nom":"Firstname",
+    "Prénom":"Lastname",
+    "Genre":"Gender",
+    "Homme":"Male",
+    "Femme":"Female",
+    "DateNaissance":"Date of Birth",
+    "AdresseEmail":"E-mail",
+    "Contact":"Contact",
+    "ÉtatCivil":"Civil status",
+    "Adresse":"Adress",
+    "PosteOccupé":"Position held",
+    "DateEntrée":"Entry date",
+    "Rôle":"Role",
+    "Slack":"Slack",
+    "Discrod":"Discrod",
+    "Facebook":"Facebook",
+    "LinkedIn":"LinkedIn",
+    "CoordonnéesConnexion":"Connection details",
+    "NomUtilisateur":"Username",
+    "AncienMotPasse":"Old Password",
+    "NouveauMotPasse":"New Password",
+    "Confirmer":"Confirm password",
+
+    "ChangerRôle":"Change role",
+    "VALIDER":"VALIDATE",
+    "ANNULER":"CANCEL",
+    "ChangerRole":"Are you sure you want to change the role?",
+    "consultant":"Consultant",
+    "stagiaire":"trainee",
+    "manager":"manager",
+    "ResponsableRH":"Responsable RH",
+    "employé":"employee"
+  
+  },
+
+  "TEAM":{
+    "Equipe":"Team",
+    "AjouterEmployé":"Add employee",
+    "Nom":"Firstname",
+    "Prénom":"Lastname",
+    "email":"E-mail",
+    "PosteOccupée":"Position held",
+    "Département":"Departement",
+    "Rôle":"Role",
+    "marquePrésence":"marks its presence",
+    "ANNULER":"CANCEL",
+    "AJOUTER":"ADD",
+    "supprimerElément":"Are you sure you want to delete this item?",
+    "SUPPRIMER":"REMOVE"
+  
+  },
+
+  "ActivityReport":{
+    "CRA":"Activity report",
+    "Précédent":"Previous",
+    "today":"Today",
+    "Next":"Next",
+    "Month":"Month",
+    "Week":"WEEK",
+    "Day":"dAY",
+    "Weekend":"Week end",
+    "Oeuvré":"Worked",
+    "Absent":"Absent",
+    "Congé":"Holiday",
+    "Sortie":"Exit",
+    "JourFérié":"Public holiday",
+    "EventActionOccurred":"Event action occurred"
+
+  }
+
+
+
+}

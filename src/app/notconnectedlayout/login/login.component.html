@@ -1,0 +1,66 @@
+<div class="login">
+ 
+  <div class="content-login" >
+
+    <div class="d-flex justify-content-center" style="align-content: center;">
+     <img src="../../../assets/Logo/logo_Xhrm.png" style="width: 284px; top: 00px;
+    ">
+    </div>
+    <div class="title">{{ 'LOGIN.title' | translate }}</div>
+    
+    <form [formGroup]="loginForm" (ngSubmit)="doLogin()">
+
+      <div class="w-100" floatLabel='always'>
+        <div class="emailField">
+          &nbsp;              &nbsp; &nbsp; <mat-label class="emailField">{{ 'LOGIN.emailInput' | translate }}</mat-label>
+          
+          <input matInput  style=" padding-left:20px; " name="username" formControlName="username" id="email" placeholder="{{ 'LOGININPUT.emailInput' | translate }}"> 
+        </div>
+      </div>
+
+    <div class="passwordField">    &nbsp;      &nbsp;    &nbsp;     
+          <mat-label>{{ 'LOGIN.passwordInput' | translate }}</mat-label>
+       
+          <div class="d-flex justify-content-between align-items-center"  >
+            <input matInput style=" padding-left:20px; "  [type]="eyeSlash ? 'password' : 'text'"  name="password"  formControlName="password" placeholder="{{ 'LOGININPUT.passwordInput' | translate }}" id="password">
+           
+            <img src="../../../assets/icons/eyeee.svg"  width="20" height="40"[style.display]="eyeSlash ? 'block' : 'none'" (click)="passwordEye()" style="margin-left: -50px; cursor: pointer; color:blue;">
+            <img src="../../../assets/icons/close eye.svg" width="20" height="40"[style.display]="eyeSlash ? 'none' : 'block'"  (click)="passwordEye()" style="margin-left: -50px; cursor: pointer; color:blue">
+          
+             </div>
+             
+        </div>
+  
+      &nbsp;
+      &nbsp;
+      <div class="d-flex justify-content-between">
+        <p class="d-flex align-items-center Hover">
+          <input type="checkbox" style="border-radius: 12px;box-sizing: border-box; width: 17px; height: 17px; left: 0%;
+          right: 0%;
+          top: 0%;
+          bottom: 0%;border: 1px solid #0075D6;box-sizing: border-box; border: 3px solid #0075D6;
+          border-radius: 12px;"id="connect">&nbsp; &nbsp;
+         <label for="connect" class="mb-0" style="cursor: pointer;  font-family: 'Lato';
+         font-style: light;">{{ 'LOGIN.resterConnecte' | translate }}</label>
+        </p>
+        
+        
+        <div style="  font-family: 'Lato';
+        font-style: light;"><a routerLink="/resetPassword"><u>{{ 'LOGIN.mdpOublie' | translate }}</u></a></div>
+        </div>
+   
+      <div class="form-group">
+        <button type="submit" class="btn-sign btn-sign-in"  style="background: #0075D6;box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.15);
+        border-radius: 50px;font-size: 16px; "value="Log In">{{ 'LOGIN.btnConnecter' | translate }}</button>
+      </div>
+      &nbsp;   &nbsp;
+      <br>
+      <br>
+      
+     <div class="seConnecter">
+       <h5 style="color:#001833 ; font-size: 120%; ">{{ 'LOGIN.VousNavezPasCompte' | translate }}
+       <p><a routerLink="/company" style="color: #EF8200; font-size: 120%;">{{ 'LOGIN.Inscription' | translate |uppercase}}</a></p></h5>
+     </div>
+    </form>
+  </div>
+</div>

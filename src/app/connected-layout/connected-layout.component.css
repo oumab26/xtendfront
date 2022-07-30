@@ -1,0 +1,301 @@
+.box{
+    padding:20px;
+  
+    opacity: 1;
+    height: 100vh;
+    overflow: scroll;
+    background-image: url('../../assets/Logo/arriere.svg') ;
+  
+    background-size: 45%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+}
+
+/* .side-part{
+    
+} */
+.container{
+opacity: 1;
+padding: 12px;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+box-shadow: 2px 10px 20px #00000029;
+border-radius: 32px;
+
+
+}
+.col-md-7{
+    position: right;
+}
+.img-large-mode{
+    width: 115%;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.img-normal-mode{
+    width: 100%;
+    cursor: pointer;
+}
+
+
+.header{
+    padding-left: 2%;
+    padding-right: 2%;
+}
+.lign{
+    background-color:#F5FAFF ;
+    height: 2px;
+    width: 100%;
+    margin-top: 1px;
+    
+    box-shadow: #F5FAFF;
+}
+
+.search input{
+    background-color:white;
+    color: #9E9E9E;
+    padding: 8px;
+    padding-left:32px;
+    border-radius:64px; 
+    border: 1px solid#9E9E9E;
+    width:100%;
+    margin:0;
+    position: relative;
+  }
+  
+  .search input::placeholder{
+    color:#9E9E9E;
+  }
+  .search textarea:focus, input:focus{
+    outline: none;
+}
+  
+  .icon-search{
+    color:#9E9E9E;
+    position: absolute;
+    top:11px;
+    left:11px;
+    font-size:16px;
+  }
+  .search input:hover{
+      color: #001833;
+      border-color: #0071F2;
+  }
+  
+  .search{
+      position: relative;
+  }
+
+.user-nav{
+    position: relative;
+}
+
+
+.nav-icon{
+    color:#001833;
+    position: absolute;
+    font-size:24px;
+    bottom: 40%;
+}
+
+
+.username{
+text-align: center;
+font-size: 16px;
+letter-spacing: 0px;
+color: #001833;
+opacity: 1;
+margin-left: 35px;
+margin-top: 7px;
+position: absolute;
+}
+
+.langue{
+    border:hidden;
+    font-size: 16px;
+    color:#001833;
+    margin:auto 0;
+}
+
+.logo{
+opacity: 1;
+height: 65px;
+  width: 190px;
+}
+
+.side-bar>ul{
+    list-style-type: none;
+    margin-top: 85px;
+}
+
+.side-bar >ul>li{
+    text-align: center;
+    color:#001833;
+    font-size: 14px;
+    height: 40px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-weight:bold ;
+    display: inline-block;
+    padding-left: 60px;
+    line-height: 24px;
+    padding-top: 8px;
+}
+
+.activity{
+    margin-left: -15px;
+}
+.side-bar-label{
+    padding-left: 18px;
+
+
+}
+/* .side-bar >ul>li:hover{
+    background-color:#707070;
+    border-radius: 20px 0 0 20px;
+    cursor: pointer;
+} */
+
+ .side-bar >ul>li:focus{
+    outline:none;
+    }
+
+.page-content{
+    padding: 50px;
+
+    background: linear-gradient(91.16deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.2) 100%);
+    /* Glass Effect */
+    
+    box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(14px);
+    /* Note: backdrop-filter has minimal browser support */
+    
+    border-radius: 16px;
+}
+
+.modal-content{
+
+  
+    align-content: center;
+    
+  
+    
+    position: fixed;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 90%;
+   
+
+}
+
+
+
+
+.logout{
+    position: absolute;
+    right: -36px;
+}
+
+.logout-icon{
+    font-size: 24px;
+    color: #001833;
+    cursor: pointer;
+}
+
+.user-profile{
+    cursor: pointer;
+}
+
+.company{
+    position: absolute;
+    right: 228px;
+}
+
+ul #dashboard-icon{
+    background: url(../../assets/icons/side-dashboard.svg) no-repeat left center;
+    background-size: contain;
+    background-size: 24px;
+    
+}
+ul #dashboard-icon{
+    background: url(../../assets/icons/dashboard.svg) no-repeat left center;
+    background-size: contain;
+    background-size: 24px;
+    
+}
+ul #team-icon{
+    background: url(../../assets/icons/equipe.svg) no-repeat left center;
+    background-size: 24px;
+    
+}
+ul #attendance-icon{
+    background: url(../../assets/icons/presence.svg) no-repeat left center;
+    background-size: contain;
+    background-size: 20px;
+}
+ul #leave-icon{
+    background: url(../../assets/icons/autorisation.svg) no-repeat left center;
+    background-size: contain;
+    background-size: 24px;
+}
+ul #expenses-icon{
+    background: url(../../assets/icons/depenses.svg) no-repeat left center;
+    background-size: contain;
+    background-size: 24px;
+}
+ul #payroll-icon{
+    background: url(../../assets/icons/side-payroll.svg) no-repeat left center;
+    background-size: contain;
+    background-size: 24px;
+}
+ul #planning-icon{
+    background: url(../../assets/icons/side-planning.svg) no-repeat left center;
+    background-size: contain;
+    background-size: 24px;
+}
+ul #report-icon{
+    margin-left: 4px; 
+    background: url(../../assets/icons/calendar-alt-solid.svg) no-repeat left center;
+    background-size: 31px;
+    background-size: 20px;
+    
+}
+ul #reglage{
+    background: url(../../assets/icons/reglage.svg) no-repeat left center;
+    background-size: contain;
+    background-size: 20px;
+}
+ul #logout{
+    background: url(../../assets/icons/logout.svg) no-repeat left center;
+    background-size: contain;
+    background-size: 20px;
+}
+
+ul #swipe-icon-left{
+    position: fixed;
+    bottom: 12px;
+    color: #EF8200;
+    font-size: 36px;
+    left :5px;
+}
+ul #swipe-icon-right{
+    position: fixed;
+    bottom: 12px;
+    color: #EF8200;
+    font-size: 36px;
+    left :110px;
+}
+.liPosition{
+    display: inline;
+    margin-right: 40px;
+
+}
+.liLogout{
+    display: inline;
+    margin-right: -2px;  
+}
+
+

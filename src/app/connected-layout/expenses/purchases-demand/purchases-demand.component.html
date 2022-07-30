@@ -1,0 +1,33 @@
+<section >
+    <h3 class="section-title">{{ 'PURCHASES.DemandesAchatAttente' | translate }}</h3>
+    <div class="lign"></div>
+    <div class="row tab">
+        <div class="col-md-2 colonTitle">{{ 'PURCHASES.Username' | translate }}</div>
+        <div class="col-md-1 colonTitle">{{ 'PURCHASES.Date' | translate }}</div>
+        <div class="col-md-1 colonTitle">{{ 'PURCHASES.Produit' | translate }}</div>
+        <div class="col-md-1 colonTitle">{{ 'PURCHASES.Prix' | translate }}</div>
+        <div class="col-md-1 colonTitle">{{ 'PURCHASES.Quantité' | translate }}</div>
+        <div class="col-md-1 colonTitle">{{ 'PURCHASES.Lien' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'PURCHASES.Besoin' | translate }}</div>
+        <div class="col-md-1 colonTitle">{{ 'PURCHASES.Fournisseur' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'PURCHASES.Action' | translate }}</div>
+
+    </div>
+
+    <div class="row tabElements-second-section" *ngFor="let item of pendingDemands;">
+        <div class="col-md-2 colonTitle">{{item.userFirstname}} &nbsp; {{item.userLastname}}</div>
+        <div class="col-md-1 colonTitle">{{item.date | date: 'dd  MMM  yyyy'}}</div>
+        <div class="col-md-1 colonTitle">{{item.productName}}</div>
+        <div class="col-md-1 colonTitle">{{item.price}}</div>
+        <div class="col-md-1 colonTitle">{{item.quantity}}</div>
+        <div class="col-md-1 colonTitle">{{item.link}}</div>
+        <div class="col-md-2 colonTitle">{{item.need}}</div>
+        <div class="col-md-1 colonTitle">{{item.providerName}}</div>
+        <div class="col-md-2 colonTitle" >
+            <span class="check" (click)="acceptDemand(item.purchaseId)"></span>
+            <span class="delete" (click)="rejectDemand(item.purchaseId)"></span>
+        </div>  
+        <div class="lign"></div>
+    </div>
+
+</section>

@@ -1,0 +1,349 @@
+.greeting{
+    width: 100%;
+    background-color: #85C8FF;
+    border-radius: 16px;
+    padding:36px 24px ;
+}
+
+
+.greeting h1{
+    color: #0075D6;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.greeting p{
+    color: #001833;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.check-demand{
+    margin-top: 15px;
+    border-radius: 16px;
+    background-color:#F5FAFF;
+    color: #0075D6;
+    width: 60%;
+    font-size: 15px;
+    font-weight: bold;
+    padding:9px 8px;
+    border: none;
+}
+
+.image-bg-greeting{
+    background: url(../../../assets/Logo/greeting.png) no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 27vh;
+}
+
+.digitalTime{ 
+    background-color: #F5FAFF;  
+    border-radius: 13%;
+}
+.digitalClock{
+    font-size: 30px;
+    font-weight: 100;
+    color: #5CB6FF;
+    height: 25%;
+    text-align: center;
+    margin: 0 0 0 6%;
+}
+.hours{
+    text-align: center;
+    margin: 50% 0;
+}
+.double-point{
+     margin-top: 10px; 
+}
+.cercle{
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+  background: #001833;
+}
+.digitalDate{
+    text-align: left;
+    font-size: 30px;
+    color: #001833 ;
+    margin-top: 6%;
+}
+
+.date{
+    color: #0075D6;
+    font-weight: bold;
+    margin-bottom: 0px;
+    margin-left: 4px;
+    text-align: left;
+}
+
+.time{
+    background-color: #F4F9FE;
+    border-radius: 16px;
+    padding: 13px 4px;
+}
+
+.section-title{
+    margin-left: 4px;
+    color: #0075D6;
+    font-weight: bold;
+    margin-bottom: 0px;
+    text-align: left;
+}
+
+.userimg{ 
+    margin: 10px 25px 0 0px;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+}
+
+.birthday-section{
+    background-color: #D2EAFF;
+    border-radius: 16px;
+    padding: 12px 18px;
+}
+
+.birthday-bg{
+    background: url(../../../assets/Logo/birthday-bg.png) no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.birthday{
+    margin-top:25px;
+}
+
+.attendance{
+    margin-top:25px;
+    width: 100%;
+    background-color: #F5FAFF;
+    border-radius: 16px;
+    padding:36px 24px ; 
+}
+.users-attendance{
+    width: 170px;
+    height: 165px;
+    border-radius: 30px;
+    background: #D2EAFF;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    padding: 24px 12px;
+}
+
+.percentage{
+    font-size: 30px;
+    color: #001833;
+    text-align: center;
+    font-weight: lighter;
+}
+
+
+
+.msg{
+    font-size: 30px;
+    color: #0075D6;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.msg2{
+    font-size: 30px;
+    color: #001833;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.attendance-percentage-office{
+    display: flex;
+    align-items: center;
+}
+
+.attendance-lign-100{
+    width:100%;
+    height:3px;
+    background-color:#FFDAAD;
+}
+
+.attendance-lign{
+    height:4px;
+    background-color:#EF8200;
+    margin-top: -4px;
+}
+
+.border-cercle{
+    width: 160px;
+    height: 160px;
+    border-radius: 75px;
+    border:solid;
+    border-color: #D2EAFF ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.attendance-lign-100-total{
+    width:100%;
+    height:3px;
+    background-color:#F5FAFF;
+}
+
+.attendance-lign-total{
+    height:4px;
+    background-color:#0075D6;
+    margin-top: -4px;
+}
+.team-presence{
+    margin-top: 25px;
+}
+.presence-section{
+    background-color: #F5FAFF;
+    border-radius: 16px;
+    height: 120px;
+    overflow: scroll;
+    white-space:nowrap;
+}
+
+.presence-section::-webkit-scrollbar {
+    display: none;
+  }
+
+
+.user-card{
+    border-radius: 43px;
+    width: 33%;
+    display: inline-block;
+    margin: 0px 20px;
+    height: 90px;
+    width: 80px;
+    
+}
+.card{
+    background-color: #F5FAFF;
+    height: 88px;
+    width:77px;
+    display: inline-flex;
+    margin: auto 15px;
+    border: none;
+}
+
+.profile-content{
+    background-color: #F4F9FE;
+    border-radius: 16px;
+    padding:20px ;
+}
+.user-information{
+    width:100%;
+    display: inline-flex;
+}
+
+.profile-section{
+    margin-top: 25px;
+}
+
+.button-done{
+    padding: 6px;
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    position:relative;
+}
+.ligne{
+    height: 4px;
+    margin-top: 12px;
+    width: 100%;
+}
+
+.centered-icon{
+    position: absolute;
+    top:8px;
+    left:23px;
+}
+.button-content{
+    text-align: center;
+    color: white;
+    font-size: x-large;
+}
+
+ #i-button-content{
+    position: absolute;
+    top: 4px;
+    left: 4px;
+}
+
+.profile-status{
+    width:100%;
+    display: inline-flex;
+}
+.profile-part{
+    width:10%;
+}
+.wire{
+    width:35%;
+    margin-left: -10px;
+}
+
+.profile-part-label{
+    text-align: left;
+    width: fit-content;
+}
+
+.username{
+    color: #001833;
+    font-weight: bold;
+}
+
+.user-role{
+    color: #EF8200;
+    font-weight: bold;
+}
+
+.demand{
+    margin-top: 25px;
+}
+
+.navbar-nav{
+    width: 100%;
+    display: flex;
+}
+
+.nav-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-right: 4px; */
+    width: 30%;
+    height: 34px;
+    /* text-decoration: underline; */
+    color: #9E9E9E;
+    cursor: pointer;
+    text-align: center;
+
+}
+
+.nav-item:hover{
+    color: #0075D6;
+    background-color: #F5FAFF;
+    border-radius: 16px 16px 0px 0px;
+    text-align: center;
+}
+
+.see-more{
+    position: absolute;
+    right: 22px;
+    bottom: 6px;
+    color: #0075D6;
+    cursor: pointer;
+}
+
+.chariot{
+    position: absolute;
+    top: 100px;
+    left: 70px;
+    font-size: 55px;
+
+}

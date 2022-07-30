@@ -1,0 +1,125 @@
+
+
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8" >
+  <div class="container-fluid">
+    <div class="header-body">
+      <!-- Card stats -->
+      <div class="row">
+    
+      
+
+          <!-- Search form -->
+
+
+          <div class="col-xl-20 mb-5 mb-xl-0">
+            <div class="card shadow">
+              <div class="card-header border-0">
+                <!-- Search form -->
+                <form class="form-inline active-pink-3 active-pink-4">
+                  <i class="fas fa-search" aria-hidden="true"></i>
+                  <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
+                         aria-label="Search" [(ngModel)]="filterTerm"  [ngModelOptions]="{standalone: true}" >
+                </form>
+              </div>
+
+              
+
+
+            
+              <div class="container" id="main-container">
+                <div class="row">
+
+                  <ng-container *ngIf="isPermitted" >
+                    <section class="departement" *ngFor="let department of departments" >
+                      <h3 class="section-title" style="color:blue">{{department.departmentName}}</h3>
+                  
+                      <div class="lign"></div>
+                  
+                      <div class="users">
+                        <div class="user-card" *ngIf="isPermitted">
+                          <div class="card add-user" style="border-color: blue">
+                           </div>
+                        </div>
+                        <!--| paginate: config-->
+                        <div class="user-card" *ngFor="let user of department.users| filter:filterTerm">
+                          <div class="card" style="align-items: center;">
+                            <span class="username">{{user.firstname}}&nbsp;{{user.lastname}}</span>
+                            <img src="../../../assets/Logo/userIMG1.jpg"  style="width: 10cm;height: 10cm; " class="userimg">
+                          
+                            <span class="role">{{user.role.roleName}}</span>
+                            <span class="discord">{{user.discord}}</span>
+                            <span class="phone">{{user.phone}}</span>
+                            <span class="address">{{user.address}}</span>
+                            <p class="userjob" *ngIf="user.job">{{user.job.jobName}}</p>
+                           
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                 <!---  <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>-->
+
+                  </ng-container>
+
+
+                  
+                  <ng-container *ngIf="!isPermitted" >
+                    <section class="departement" *ngFor="let department of departments| filter:filterTerm">
+                      <h3 class="section-title">{{department.departmentName}}</h3>
+                  
+                      <div class="lign"></div>
+                  
+                      <div class="users">
+                        <ng-container *ngIf="department===userDepartment">
+                          <div class="user-card" *ngFor="let user of department.users| filter:filterTerm">
+                            <div class="card">
+                              <img src="../../../assets/Logo/userIMG1.jpg" class="userimg">
+                              <span class="username">{{user.firstname}}&nbsp;{{user.lastname}}</span>
+                              <p class="userjob" *ngIf="user.job">{{user.job.jobName}}</p>
+                              
+                            </div>
+                          </div>
+                        </ng-container>
+                      </div>
+                    </section>
+                  </ng-container>
+
+
+                </div>
+               
+              </div>
+            </div>
+          </div>
+        </div></div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

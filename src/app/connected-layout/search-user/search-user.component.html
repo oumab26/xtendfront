@@ -1,0 +1,12 @@
+<div *ngIf="user">
+    <div class="card">
+        <img src="../../../assets/Logo/userIMG1.jpg" class="userimg">
+        <span class="username">{{user.firstname}}&nbsp;{{user.lastname}}</span>
+        <p class="userjob" *ngIf="user.job">{{user.job.jobName}}</p>
+    </div>
+</div>
+<div *ngIf="!user">
+    <div class="not-found">
+        <span>User not found</span>
+    </div>
+</div>

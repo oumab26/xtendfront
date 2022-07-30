@@ -1,0 +1,55 @@
+<section class="">
+    <h3 class="section-title">{{ 'LeaveResponse.DemandesSorties' | translate }}</h3>
+    <div class="lign"></div>
+    <div class="row tab">
+        <div class="col-md-1 colonTitle">{{ 'LeaveResponse.Photo' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'LeaveResponse.NomPrénom' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'LeaveResponse.DateSortie' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'LeaveResponse.De' | translate }}</div>
+        <div class="col-md-1 colonTitle">{{ 'LeaveResponse.À' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'LeaveResponse.Raison' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'LeaveResponse.Action' | translate }}</div>
+    </div>
+
+    <div class="row tabElements" *ngFor="let item of exitPermissionPendingDemands">
+        <div class="col-md-1 colonTitle">photo</div>
+        <div class="col-md-2 colonTitle">{{item.user.firstname}} &nbsp;{{item.user.lastname}}</div>
+        <div class="col-md-2 colonTitle"><span><span>{{item.date | date: 'dd  MMM  yyyy'}}</span></span></div>
+        <div class="col-md-2 colonTitle"><span>{{item.exitTime[0]}}:{{item.exitTime[1]}}</span></div>
+        <div class="col-md-1 colonTitle">{{item.returnTime[0]}}:{{item.returnTime[1]}}</div>
+        <div class="col-md-2 colonTitle"><span>{{item.reason}}</span></div>
+        <div class="col-md-2 colonTitle">
+            <span class="check" (click)="acceptExitPermissionDemand(item.id)"></span>
+            <span class="cancel" (click)="rejectExitPermissionDemand(item.id)"></span>
+        </div>
+        <div class="lign"></div>
+    </div>
+</section>
+
+<section class="">
+    <h3 class="section-title">{{ 'LeaveResponse.DemandesCongés' | translate }}</h3>
+    <div class="lign"></div>
+    <div class="row tab">
+        <div class="col-md-1 colonTitle">{{ 'LeaveResponse.Photo' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'LeaveResponse.NomPrénom' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'LeaveResponse.DateDébut' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'LeaveResponse.NombreJours' | translate }}</div>
+        <div class="col-md-1 colonTitle">{{ 'LeaveResponse.Type' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'LeaveResponse.Raison' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'LeaveResponse.Action' | translate }}</div>
+    </div>
+
+    <div class="row tabElements" *ngFor="let item of timeOffPendingDemands">
+        <div class="col-md-1 colonTitle">photo</div>
+        <div class="col-md-2 colonTitle">{{item.user.firstname}} &nbsp;{{item.user.lastname}} </div>
+        <div class="col-md-2 colonTitle"><span>{{item.startDate | date: 'dd  MMM  yyyy'}}</span></div>
+        <div class="col-md-2 colonTitle"><span>{{item.numberOfDays}}</span></div>
+        <div class="col-md-1 colonTitle">{{item.type}}</div>
+        <div class="col-md-2 colonTitle"><span>{{item.reason}}</span></div>
+        <div class="col-md-2 colonTitle">
+            <span class="check" (click)="acceptTimeOffDemand(item.id)"></span>
+            <span class="cancel" (click)="rejectTimeOffDemand(item.id)"></span>
+        </div>
+        <div class="lign"></div>
+    </div>
+</section>

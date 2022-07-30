@@ -1,0 +1,74 @@
+.tab{
+    background-color: #F5FAFF;
+    width: 100%;
+    margin: auto;
+    height: 50px;
+}
+
+section{
+    margin-bottom: 30px;
+}
+
+
+
+.check{
+    background: url(../../../../assets/icons/check_composant.svg) no-repeat left center;
+    background-size: contain;
+    height: 40px;
+    width: 50px;
+    margin: auto;
+    position: absolute;
+    left: 20%;
+    bottom: 0%;
+    cursor: pointer;
+}
+.delete{
+    background: url(../../../../assets/icons/delete_composant.svg) no-repeat left center;
+    background-size: contain;
+    height: 40px;
+    width: 50px;
+    margin: auto;
+    position: absolute;
+    left: 55%;
+    bottom: 0%;
+    cursor: pointer;
+}
+
+.lign{
+    background-color:#0075D6 ;
+    height: 1px;
+    width: 100%;
+    margin-top: 4px;
+}
+
+.lign2{
+    background-color:#0075D6 ;
+    height: 1px;
+    width: 100%;
+    margin-top: 1px;
+}
+
+.lign1{
+    background-color:#0075D6 ;
+    height: 1px;
+    width: 100%;
+    margin-top: -6px;
+}
+
+.tab-head{
+    font-weight: 700;
+}
+.colonTitle{
+    font-size: 20px;
+    margin-top: 4px;
+    text-align: center;
+    text-overflow: ellipsis;
+    /* word-wrap: break-word;   */
+}
+.tabElements{
+    width: 100%;
+    margin: auto;
+    height: 50px;
+}
+
+

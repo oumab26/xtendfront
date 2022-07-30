@@ -1,0 +1,162 @@
+<div class="login">
+  <div class="content-login">
+    <div class="logo">
+      <img src="../../../assets/Logo/logo_Xhrm.png" style="width:100%"> 
+    </div>
+  <br> 
+    <mat-horizontal-stepper style="    background: transparent !important;" #stepper>
+   
+      <mat-step [stepControl]="companyForm" >
+        <div class="w-100" floatLabel='always'>
+        <div class="coordonneesGenerale">
+        <form [formGroup]="userForm">
+          <ng-template matStepLabel>{{ 'COMPANY.Coordonnéesgernerale' | translate }}</ng-template>
+          <mat-form-field class="w-50" floatLabel='always' style="padding: 5px;" appearance="none">
+            <div class="emailField">  &nbsp;      &nbsp;    &nbsp;  
+              <mat-label class="emailField">{{ 'COMPANY.nomResponsable' | translate }}</mat-label>
+              <input matInput name="responsable_name" formControlName="lastname" > 
+            </div>
+          </mat-form-field>
+          <mat-form-field class="w-50" floatLabel='always' style="padding: 5px;" appearance="none">
+            <div class="emailField">  &nbsp;      &nbsp;    &nbsp;  
+              <mat-label class="emailField">{{ 'COMPANY.prenomResponsable' | translate }}</mat-label>
+              <input matInput name="responsable_name" formControlName="firstname" > 
+            </div>
+        </mat-form-field>
+     </form>
+      </div>
+        <form [formGroup]="companyForm">
+          <mat-form-field class="w-100" floatLabel='always' appearance="none">
+            <div class="emailField">  &nbsp;      &nbsp;    &nbsp;  
+              <mat-label class="emailField">{{ 'COMPANY.nomEntrepriseInput' | translate }}</mat-label>
+              <input matInput name="company_name" formControlName="companyName" > 
+            </div>
+          </mat-form-field>
+            <br> <br>
+                  <div class="emailField">  &nbsp;      &nbsp;    &nbsp;  
+                    <label class="form-label">{{ 'COMPANY.nbrEmployeInput' | translate }}</label>
+                    <select class="form-select select-sizeCompany" aria-label="Default select example" formControlName="personalSize" placeholder="0-14">
+                      <option value="1-14" class="option-sizeCompany">{{ 'COMPANY.de' | translate }} 1-14 {{ 'COMPANY.employés' | translate }}</option> <hr  style="background-color:white">
+                      <option value="15-49" class="option-sizeCompany">{{ 'COMPANY.de' | translate }} 15-49 {{ 'COMPANY.employés' | translate }}</option><hr >
+                      <option value="50-99" class="option-sizeCompany">{{ 'COMPANY.de' | translate }} 50-99 {{ 'COMPANY.employés' | translate }}</option><hr >
+                      <option value="100-249" class="option-sizeCompany">{{ 'COMPANY.de' | translate }} 100-249 {{ 'COMPANY.employés' | translate }}</option><hr >
+                      <option value="250" class="option-sizeCompany">{{ 'COMPANY.Plusque' | translate }} 250 {{ 'COMPANY.employés' | translate }}</option><hr >
+                    </select>
+                    <hr>
+                  </div>
+
+<br>
+          <div class="form-group">
+            <button mat-button matStepperNext type="submit"   style="
+             border-radius: 60px;font-size: 16px; background: #0075D6;font-family: 'Lato';
+font-style: normal;box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.15);
+          " class=" h-75 btn-sign btn-sign-in">{{ 'COMPANY.continueButton' | translate }}</button>
+        </div>
+        </form>
+        <h5 style="color:#001833 ; font-size: 120%; ">{{ 'COMPANY.VousAvezCompte' | translate }}</h5>
+        <p><a routerLink="/login" style="color: #EF8200; font-size: 120%;">{{ 'LOGIN.btnConnecter' | translate }}</a></p>
+      </div>
+      </mat-step>
+    
+
+      <mat-step [stepControl]="companyForm">
+        <div class="entreprise">
+          <form [formGroup]="companyForm">
+         
+            <ng-template matStepLabel>{{ 'COMPANY.Entreprise' | translate }}</ng-template>
+
+            <mat-form-field class="w-100 inputs-margin" floatLabel='always'  appearance="none">
+              <div class="emailField" >  &nbsp;      &nbsp;    &nbsp;  
+                <mat-label class="emailField">{{ 'COMPANY.activiteEntrepriseInput' | translate }}</mat-label>
+                <input matInput name="company_activity" formControlName="companyActivity" > 
+              </div>
+            </mat-form-field>
+
+            <mat-form-field class="w-100 inputs-margin" floatLabel='always'  appearance="none">
+                  <div class="emailField"  >  &nbsp;      &nbsp;    &nbsp;  
+                    <mat-label class="emailField">{{ 'COMPANY.phoneInput' | translate }}</mat-label>
+                    <input matInput name="phone" formControlName="phone" > 
+                  </div>
+            </mat-form-field>
+          
+          <mat-form-field class="w-100" floatLabel='always'style="margin-bottom: 55px;"  appearance="none">
+            <div class="emailField" >  &nbsp;      &nbsp;    &nbsp;  
+              <mat-label class="emailField">{{ 'COMPANY.adresseInput' | translate }}</mat-label>
+              <input matInput name="address" formControlName="address" > 
+            </div>
+          </mat-form-field> 
+      <br> <br>
+          <div class="form-group">
+              <button mat-button matStepperNext type="submit"  class=" h-75 btn-sign btn-sign-in"  style="
+              border-radius: 50px;font-size: 16px; background: #0075D6;font-family: 'Lato';
+ font-style: normal;box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.15);
+           "  value="Sign Up">{{ 'COMPANY.continueButton' | translate }}</button>
+          </div>
+          </form>
+        </div>
+        </mat-step>
+
+        <mat-step [stepControl]="userForm">
+        <div class="compte">
+        <form [formGroup]="userForm">
+          <ng-template matStepLabel>{{ 'COMPANY.Compte' | translate }}</ng-template>
+
+          <mat-form-field class="w-100 inputs-margin" floatLabel='always'  appearance="none">
+            <div class="emailField">  &nbsp;      &nbsp;    &nbsp;  
+              <mat-label class="emailField">{{ 'COMPANY.userName' | translate }}</mat-label>
+              <input matInput  name="username" formControlName="username" > 
+            </div>
+          </mat-form-field>
+              <br> 
+          <mat-form-field class="w-100 inputs-margin" floatLabel='always'  appearance="none">
+            <div class="emailField">  &nbsp;      &nbsp;    &nbsp;  
+              
+              <mat-label class="emailField">{{ 'COMPANY.adresseMail' | translate }}</mat-label>
+              <input matInput name="email" formControlName="email"> 
+            </div>
+          </mat-form-field>
+          <br>   <br>  
+          <div class="example-container">
+          
+            <mat-form-field class="w-100 inputs-margin" floatLabel='always' appearance="none">
+              <div class="passwordField">
+                &nbsp;      &nbsp;    &nbsp;  
+                <mat-label>{{ 'LOGIN.passwordInput' | translate }}</mat-label>
+          
+          
+             <div class="d-flex justify-content-between ">
+                  <input matInput  style=" padding-left:10px; " [type]="eyeSlash ? 'password' : 'text'"  name="password" formControlName="password"  id="password">
+                
+                  <img src="../../../assets/icons/eyeee.svg"  width="20" height="45"[style.display]="eyeSlash ? 'block' : 'none'" (click)="passwordEye()" style="margin-left: -50px; cursor: pointer; color:blue;">
+                  <img src="../../../assets/icons/close eye.svg" width="20" height="45"[style.display]="eyeSlash ? 'none' : 'block'"  (click)="passwordEye()" style="margin-left: -50px; cursor: pointer; color:blue">
+                
+                   </div>
+              
+              
+                
+            
+              </div>
+             
+            </mat-form-field>
+            </div>
+            <br> <br>
+            <div style="color: #585858; margin-bottom: 30px;">
+              <input type="checkbox" style="border: radius 19px; width: 12px; height: 12px;">
+              {{ 'COMPANY.condition' | translate }}
+            </div>
+           
+            <div class="form-group">
+           
+              <button mat-button matStepperNext type="submit"   style="
+              border-radius: 60px;font-size: 16px; background: #0075D6;font-family: 'Lato';
+ font-style: normal;box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.15);
+           " class=" h-75 btn-sign btn-sign-in"  value="Sign Up" (click)="signup()">{{ 'COMPANY.continueButton' | translate }}</button>
+            </div>
+          </form>
+        </div>
+        </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+</div>
+
+

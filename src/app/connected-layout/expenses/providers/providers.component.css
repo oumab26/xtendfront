@@ -1,0 +1,96 @@
+section{
+    margin-bottom: 30px;
+}
+
+.lign{
+    background-color:#0075D6 ;
+    height: 1px;
+    width: 100%;
+    margin-top: 4px;
+
+}
+.section-title{
+    color: #0075D6;
+    font-weight: bold;
+    margin-bottom: 0px;
+    text-align: left;
+}
+.tab{
+    background-color: #F5FAFF;
+    width: 100%;
+    margin: auto;
+    height: 50px;
+}
+.colonTitle{
+    font-size: 20px;
+    margin-top: 17px;
+    text-align: center;
+    font-size: 15px;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+.tabElements{
+    width: 100%;
+    margin: auto;
+    height: 50px;
+}
+
+.form-control{
+    width: 100%;
+    border-color:#0075D6 ;
+    background-color: #F5FAFF;
+    border-radius: 10px;
+}
+
+
+
+.section-title{
+    color: #0075D6;
+    font-weight: bold;
+    margin-bottom: 0px;
+    width: 22%;
+    text-align: left;
+}
+
+.chevronDown{
+    right: 8%;
+    position: absolute;
+    top: 27%;
+    font-size: 20px;
+    color: #0075D6;
+}
+
+.inputs{
+    margin:5px 0;
+}
+
+.edit{
+    background: url(../../../../assets/icons/edit_composant.svg) no-repeat left center;
+    background-size: contain;
+    height: 40px;
+    width: 50px;
+    margin: auto;
+    position: absolute;
+    left: 33%;
+    bottom: 4%;
+}
+.delete{
+    background: url(../../../../assets/icons/delete_composant.svg) no-repeat left center;
+    background-size: contain;
+    height: 40px;
+    width: 50px;
+    margin: auto;
+    position: absolute;
+    left: 61%;
+    bottom: 4%;
+}
+
+.modal-style{
+    border-radius: 20px;
+    border:none;
+    padding: 0 45px;
+}
+
+.inputs{
+    text-align: right;
+}

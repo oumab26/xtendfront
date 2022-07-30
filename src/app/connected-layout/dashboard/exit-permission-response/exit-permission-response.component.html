@@ -1,0 +1,27 @@
+<section class="">
+    <div class="lign1"></div>
+    <div class="row tab">
+        <div class="col-md-2 colonTitle">{{ 'exitPermissionResponse.Nom' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'exitPermissionResponse.DateSortie' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'exitPermissionResponse.De' | translate }}</div>
+        <div class="col-md-1 colonTitle">{{ 'exitPermissionResponse.À' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'exitPermissionResponse.Raison' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'exitPermissionResponse.Action' | translate }}</div>
+    </div>
+    <div class="lign2"></div>
+    
+    <div class="tab" *ngFor="let item of exitPermissionPendingDemands">
+        <div class="row ">
+            <div class="col-md-2 colonTitle">{{item.user.firstname}} &nbsp;{{item.user.lastname}}</div>
+            <div class="col-md-2 colonTitle"><span><span>{{item.date | date: 'dd  MMM  yyyy'}}</span></span></div>
+            <div class="col-md-2 colonTitle"><span>{{item.exitTime[0]}}:{{item.exitTime[1]}}</span></div>
+            <div class="col-md-1 colonTitle">{{item.returnTime[0]}}:{{item.returnTime[1]}}</div>
+            <div class="col-md-2 colonTitle"><span>{{item.reason}}</span></div>
+            <div class="col-md-2 colonTitle">
+                <span class="check" (click)="acceptExitPermissionDemand(item.id)"></span>
+                <span class="delete" (click)="rejectExitPermissionDemand(item.id)"></span>
+            </div>
+        </div>
+        <div class="lign"></div>
+    </div>
+</section>

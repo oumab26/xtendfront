@@ -1,0 +1,14 @@
+<section class="first-title">
+  Les achats et les dépenses
+</section>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li *ngIf="permission>=3" class="nav-item" routerLink="/expenses/purchases">{{ 'EXPENSES.Achats' | translate }}</li>
+        <li *ngIf="permission>=5" class="nav-item" routerLink="/expenses/purchases-demand">{{ 'EXPENSES.ApprobationsAttente' | translate }}</li>
+        <li *ngIf="permission>=5" class="nav-item" routerLink="/expenses/periodic-expenses">{{ 'EXPENSES.DépensesPériodiques' | translate }}</li>
+        <li *ngIf="permission>=5" class="nav-item" routerLink="/expenses/providers">{{ 'EXPENSES.Fournisseurs' | translate }}</li>
+      </ul>
+    </div>
+</nav>
+<router-outlet></router-outlet>

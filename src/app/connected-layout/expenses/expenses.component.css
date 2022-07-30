@@ -1,0 +1,29 @@
+.nav-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-right: 4px; */
+    width: 30%;
+    height: 34px;
+    /* text-decoration: underline; */
+    color: #9E9E9E;
+    cursor: pointer;
+    text-align: center;
+
+}
+
+.nav-item:hover{
+    color: #0075D6;
+    background-color: #F5FAFF;
+    border-radius: 16px 16px 0px 0px;
+    text-align: center;
+}
+
+.navbar-nav{
+    width: 100%;
+    display: flex;
+}
+
+
+
+ 

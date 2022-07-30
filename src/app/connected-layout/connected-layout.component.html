@@ -1,0 +1,294 @@
+<div class="box"  style="background-color:  #D6E3ED;">
+    
+    <div class="row">
+        <div [ngClass]="{ 'col-md-2': !isLarge,
+                          'col-md-1': !isLarge}">
+                          <br>
+            <div class="logo">
+                <img src="../../assets/Logo/logo_Xhrm.png" routerLink="/dashboard"  [ngClass]="{ 'img-normal-mode': !isLarge,
+                                                                        'img-large-mode': isLarge}"> 
+            </div>
+            <div class="side-bar"   style ="color: #3D3D3D;font-family: 'Lato';
+            font-style: normal;font-size: 21px; " >
+                <ul>
+                    <li *ngIf="permission>=1" routerLink="/dashboard" id="dashboard-icon"> 
+                         <span *ngIf="!isLarge" class="side-bar-label"   >{{ 'connectedLayout.sideBar.Dashboard' | translate }}</span> 
+                    </li>
+                    <li *ngIf="permission>=1" routerLink="/team" id="team-icon"> 
+                          <span *ngIf="!isLarge" class="side-bar-label"> {{ 'connectedLayout.sideBar.Equipe' | translate }} </span>
+                    </li>
+                    <li *ngIf="permission>=1" routerLink="/appointment" id="attendance-icon" >
+                          <span *ngIf="!isLarge" class="side-bar-label"> {{ 'connectedLayout.sideBar.Présence' | translate }} </span>
+                    </li>
+                    <li *ngIf="permission>=1" routerLink="/leave" id="leave-icon" >
+                          <span *ngIf="!isLarge" class="side-bar-label"> {{ 'connectedLayout.sideBar.Autorisation' | translate }} </span>
+                    </li>
+                    <li *ngIf="permission>=3" routerLink="/expenses" id="expenses-icon">
+                          <span *ngIf="!isLarge" class="side-bar-label"> {{ 'connectedLayout.sideBar.Dépenses' | translate }} </span>
+                    </li>
+               <!--
+                 <li *ngIf="permission>=2" routerLink="/activity-report" id="report-icon">
+                        <span *ngIf="!isLarge" class="side-bar-label activity"> {{ 'connectedLayout.sideBar.activity-report' | translate }} </span>
+                
+                
+                
+                      </li>-->
+             
+                    
+                
+
+                  
+
+
+                  <li *ngIf="permission>=2" routerLink="/company-settings"  id="reglage">
+                  
+                      
+                      <span >{{ 'connectedLayout.RéglageEntreprise' | translate }}</span>
+                
+                </li>
+                <li *ngIf="permission>=2" (click)="logout()" id="logout">
+                 <!--  <i class="fas fa-sign-out-alt logout-icon" (click)="logout()"></i>&nbsp;>--> 
+                    <span >{{ 'connectedLayout.SeDéconnecter' | translate }}</span>
+                 </li>
+
+
+                    <li id="swipe-icon-left"   *ngIf="isLarge">
+                        <i (click)="normalMode()" class="fas fa-angle-double-right"></i> 
+                    </li>
+                    <li id="swipe-icon-right"  *ngIf="!isLarge">
+                        <i (click)="largeMode()" class="fas fa-angle-double-left"></i> 
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container" style="background: linear-gradient(91.16deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.2) 100%);
+        /* Glass Effect */
+        
+        box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(40px);
+        /* Note: backdrop-filter has minimal browser support */
+        
+        border-radius: 16px;"
+        [ngClass]="{ 'col-md-9': !isLarge ,
+                     'col-md-8': isLarge}">
+            <div class="row header">
+                <div class="col-md-4">
+                    <div class="search">
+                        <img src="../../assets/icons/Search.svg" class="fas fa-search" (click)="openPopup()"/>  
+                    </div>
+                </div>
+
+                <!--add 26-07-2022-->
+         
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="document">
+ 
+    <div class="modal-content">
+    
+      
+      
+                <!-- Card stats -->
+                <div class="row">
+                   
+                <div style="align-content:flex-start;">
+                    <a type="button" 
+                    (click)="closePopup()" style="width: 1cm;height: 1cm; text-size-adjust: 2cm;color: red;background-color: white;">
+                    <a style="font-size:20px;color:red">X</a>
+                      </a></div>
+                       <br>
+                        <div class="search">
+                            <div class="input-icons">
+                            <input class="form-control form-control-sm ml-3 w-75"  type="text" placeholder="Search"  [(ngModel)]="filterTerm"  [ngModelOptions]="{standalone: true}" /> 
+                           
+                 </div>
+                    </div>
+          <br>
+                
+              <ng-container *ngIf="isPermitted" >
+                <section class="departement" *ngFor="let department of departments" >
+                  <h3 class="section-title" style="color:blue">{{department.departmentName}}</h3>
+              
+                  <div class="lign"></div>
+              
+                  <div class="users">
+                    <div class="user-card" *ngIf="isPermitted">
+                      <div class="card add-user" style="border-color: blue">
+                       </div>
+                    </div>
+                    <!--| paginate: config-->
+                    <div class="user-card" *ngFor="let user of department.users| filter:filterTerm">
+                      <div class="card" style="align-items: center;">
+                        
+                 
+                     <img src="../../../assets/Logo/userIMG1.jpg"   class="card-img-top" style=" align-content:center;width: 3cm;height: 3cm; " >
+                     <div class="card-body">
+                        <h5 class="card-title" ><span class="username">{{user.firstname}}&nbsp;{{user.lastname}}</span></h5>
+                     <br>
+                        <span class="username">{{user.role.roleName}}</span>
+                        <span class="username">{{user.discord}}</span>
+                        <span class="username">{{user.phone}}</span>
+                        <span class="username">{{user.address}}</span>
+                        <br>
+                     <span class="username" *ngIf="user.job">{{user.job.jobName}}</span><br>
+                       </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+             <!---  <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>-->
+
+              </ng-container>
+
+
+              
+              <ng-container *ngIf="!isPermitted" >
+                <section class="departement" *ngFor="let department of departments| filter:filterTerm">
+                  <h3 class="section-title">{{department.departmentName}}</h3>
+              
+                  <div class="lign"></div>
+              
+                  <div class="users">
+                    <ng-container *ngIf="department===userDepartment">
+                      <div class="user-card" *ngFor="let user of department.users| filter:filterTerm">
+                        <div class="card">
+                          <img src="../../../assets/Logo/userIMG1.jpg" class="card-img-top"  >
+                          <span class="username">{{user.firstname}}&nbsp;{{user.lastname}}</span>
+                          
+                        <span class="role">{{user.role.roleName}}</span>
+                        <span class="discord">{{user.discord}}</span>
+                        <span class="phone">{{user.phone}}</span>
+                        <span class="address">{{user.address}}</span>
+                        <p class="userjob" *ngIf="user.job">{{user.job.jobName}}</p>
+                        
+                          
+                        </div>
+                      </div>
+                    </ng-container>
+                  </div>
+                </section>
+              </ng-container>
+                    <!-- Search form -->
+          
+          
+                   
+                  </div></div>
+              
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+
+   
+   
+  </div>
+</div>
+
+<!--add end-->
+              
+
+               
+
+
+
+
+
+                <div class="col-md-3"> 
+                </div>
+                <div class="col-md-5">
+                    <ul id="navBar">
+                     
+                       
+                        <li class="liPosition" >
+                            <select #langSelect (change)="translate.use(langSelect.value)" class="langue">
+                                <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang | uppercase }}</option>
+                            </select>
+                        </li>
+                  
+                   
+                    <li class="user-profile liPosition" (click)="gotoprofile()" >
+                        <i class="fa fa-user-circle nav-icon" aria-hidden="true"></i>
+                        <span class="username">{{user?.lastname}}</span>
+                </li>
+                        
+                    </ul>
+                </div>
+            </div>
+           
+           
+            <br>  <br>
+            
+           
+       
+            
+
+          
+            <div class="page-content">
+              
+              
+             
+                 <router-outlet></router-outlet>
+            
+        </div>
+
+        
+
+        </div>
+
+     <!--
+        <div class="container" style="background: linear-gradient(91.16deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.2) 100%);
+        /* Glass Effect */
+        
+        box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(40px);
+        /* Note: backdrop-filter has minimal browser support */
+        
+        border-radius: 16px;"
+        [ngClass]="{ 'col-md-3': !isLarge 
+                    }">
+                
+                
+
+                
+                </div>-->
+
+
+    </div>
+</div>
+   
+
+
+        
+

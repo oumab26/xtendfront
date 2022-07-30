@@ -1,0 +1,27 @@
+<section class="">
+    <div class="lign1"></div>
+    <div class="row tab">
+        <div class="col-md-2 colonTitle tab-head">{{ 'purchaseResponse.Nom' | translate }}</div>
+        <div class="col-md-2 colonTitle tab-head">{{ 'purchaseResponse.Produit' | translate }}</div>
+        <div class="col-md-2 colonTitle tab-head">{{ 'purchaseResponse.Prix' | translate }}</div>
+        <div class="col-md-2 colonTitle tab-head">{{ 'purchaseResponse.Quantité' | translate }}</div>
+        <div class="col-md-2 colonTitle tab-head">{{ 'purchaseResponse.Fournisseur' | translate }}</div>
+        <div class="col-md-2 colonTitle tab-head">{{ 'purchaseResponse.Action' | translate }}</div>
+    </div>
+    <div class="lign2"></div>
+    
+    <div class="tab" *ngFor="let item of pendingDemands">
+        <div class="row ">
+            <div class="col-md-2 colonTitle">{{item.userFirstname}} &nbsp; {{item.userLastname}} </div>
+            <div class="col-md-2 colonTitle">{{item.productName}}</div>
+            <div class="col-md-2 colonTitle">{{item.price}}</div>
+            <div class="col-md-2 colonTitle">{{item.quantity}}</div>
+            <div class="col-md-2 colonTitle">{{item.providerName}}</div>
+            <div class="col-md-2 colonTitle" >
+                <span class="check" (click)="acceptDemand(item.purchaseId)"></span>
+                <span class="delete" (click)="rejectDemand(item.purchaseId)"></span>
+            </div>  
+        </div>
+        <div class="lign"></div>
+    </div>
+</section>

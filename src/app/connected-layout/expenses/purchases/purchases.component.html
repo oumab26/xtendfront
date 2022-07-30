@@ -1,0 +1,263 @@
+<section >
+    <div class="row">
+        <div class="col-md-10"></div>
+        <div class="col-md-2">
+            <button type="submit" class="btn-sign btn-sign-in" (click)="addDemand()">{{ 'PURCHASES.DemanderAchat' | translate }}</button>
+        </div>
+    </div>
+
+    <h3 class="section-title">{{ 'PURCHASES.DemandeAttente' | translate }}</h3>
+    <div class="lign"></div>
+    <div class="row tab">
+        <div class="col-md-1 colonTitle">{{ 'PURCHASES.Produit' | translate }}</div>
+        <div class="col-md-1 colonTitle">{{ 'PURCHASES.Prix' | translate }}</div>
+        <div class="col-md-1 colonTitle">{{ 'PURCHASES.Quantité' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'PURCHASES.Lien' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'PURCHASES.Besoin' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'PURCHASES.Fournisseur' | translate }}</div>
+        <div class="col-md-1 colonTitle">{{ 'PURCHASES.Etat' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'PURCHASES.Action' | translate }}</div>
+    </div>
+
+    <div class="row tabElements-second-section" *ngFor="let item of pendingDemands">
+        <div class="col-md-1 colonTitle">{{item.productName}}</div>
+        <div class="col-md-1 colonTitle">{{item.price}}</div>
+        <div class="col-md-1 colonTitle">{{item.quantity}}</div>
+        <div class="col-md-2 colonTitle">{{item.link}}</div>
+        <div class="col-md-2 colonTitle">{{item.need}}</div>
+        <div class="col-md-2 colonTitle">{{item.providerName}}</div>
+        <div class="col-md-1 colonTitle pending">{{item.status | titlecase}}</div>
+        <div class="col-md-2 colonTitle" >
+            <span class="edit" (click)="editPurchase(item.purchaseId)"></span>
+            <span class="delete" (click)="cancelPurchase(item.purchaseId)"></span>
+        </div>        
+        <div class="lign"></div>
+    </div>
+    
+
+</section>
+
+
+<section >
+    <h3 class="section-title">{{ 'PURCHASES.Historique' | translate }}</h3>
+    <div class="lign"></div>
+    <div class="row tab">
+        <div class="col-md-2 colonTitle">{{ 'PURCHASES.Date' | translate }}</div>
+        <div class="col-md-1 colonTitle">{{ 'PURCHASES.Produit' | translate }}</div>
+        <div class="col-md-1 colonTitle">{{ 'PURCHASES.Prix' | translate }}</div>
+        <div class="col-md-1 colonTitle">{{ 'PURCHASES.Quantité' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'PURCHASES.Lien' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'PURCHASES.Besoin' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'PURCHASES.Fournisseur' | translate }}</div>
+        <div class="col-md-1 colonTitle">{{ 'PURCHASES.Etat' | translate }}</div>
+
+    </div>
+
+    <div class="row tabElements-second-section" *ngFor="let item of historyDemands;">
+        <div class="col-md-2 colonTitle">{{item.date | date: 'dd  MMM  yyyy'}}</div>
+        <div class="col-md-1 colonTitle">{{item.productName}}</div>
+        <div class="col-md-1 colonTitle">{{item.price}}</div>
+        <div class="col-md-1 colonTitle">{{item.quantity}}</div>
+        <div class="col-md-2 colonTitle">{{item.link}}</div>
+        <div class="col-md-2 colonTitle">{{item.need}}</div>
+        <div class="col-md-2 colonTitle">{{item.providerName}}</div>
+        <div class="col-md-1 colonTitle" 
+        [ngClass]="{ 'rejected': item.status==='REJECTED',
+                     'accepted': item.status==='ACCEPTED',
+                     'pending': item.status==='PENDING'}">{{item.status | titlecase}}</div>
+        <div class="lign"></div>
+    </div>
+
+</section>
+
+
+
+
+<!--Purchase-Demand Modal-->
+<div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog2">
+        <div class="modal-content modal-style">
+            <div class="modal-header modalTitle">
+                <h3 class="section-title-modal">{{ 'PURCHASES.DemanderAchat' | translate }}</h3>
+
+
+            </div>
+            <div class="lign-modal"></div>
+
+            <form [formGroup]="PurchaseDemandForm" (ngSubmit)="addPurchaseDemand()">
+                <div class="modal-body">
+
+                    <div class="row inputs">
+                        <div class="col-md-3">
+                            <label class="input-title">{{ 'PURCHASES.Produit' | translate }} </label>
+                        </div>
+                        <div class="col-md-9 ">
+                            <input type="text" class="form-control" formControlName="productName" />
+                        </div>
+                    </div>
+
+                    <div class="row inputs">
+                        <div class="col-md-3">
+                            <label class="input-title">{{ 'PURCHASES.Prix' | translate }}</label>
+                        </div>
+                        <div class="col-md-9 ">
+                            <input type="number" class="form-control" formControlName="price" />
+                        </div>
+                    </div>
+
+                    <div class="row inputs">
+                        <div class="col-md-3">
+                            <label class="input-title">{{ 'PURCHASES.Quantité' | translate }}</label>
+                        </div>
+                        <div class="col-md-9 ">
+                            <input type="number" class="form-control" formControlName="quantity" />
+                        </div>
+                    </div>
+
+                    <div class="row inputs">
+                        <div class="col-md-3">
+                            <label class="input-title">{{ 'PURCHASES.Lien' | translate }}</label>
+                        </div>
+                        <div class="col-md-9 ">
+                            <input type="text" class="form-control" formControlName="link" />
+                        </div>
+                    </div>
+
+                    <div class="row inputs">
+                        <div class="col-md-3">
+                            <label class="input-title">{{ 'PURCHASES.Raison' | translate }}</label>
+                        </div>
+                        <div class="col-md-9 ">
+                            <input type="text" class="form-control" formControlName="need" />
+                        </div>
+                    </div>
+
+                    <div class="row inputs">
+                        <div class="col-md-3">
+                            <label class="input-title">{{ 'PURCHASES.Fournisseur' | translate }}</label>
+                        </div>
+                        <div class="col-md-9 w-75">
+                            <select class="form-control form-control-select" id="" formControlName="providerID">
+                                <option *ngFor="let provider of providers" value="{{provider.providerID}}">
+                                    {{provider.name}}
+                                </option>
+                            </select>
+                            <i class="fas fa-chevron-down chevronDown"></i>
+                            <span class="add w-25" (click)="goToAddProvider()"></span>
+                        </div>
+                        <!-- <div class="col-md-1">
+                            <span class="add" (click)="goToAddProvider()">+</span>
+                        </div> -->
+                    </div>
+
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-retour" (click)="hideModal()">
+                        {{ 'PURCHASES.ANNULER' | translate }}
+                    </button>
+                    <button type="submit" class="btn btn-valid">
+                        {{ 'PURCHASES.AJOUTER' | translate }}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--end Purchase-Demand modal-->
+
+
+<!--edit-Purchase-Demand Modal-->
+<div [style.display]="showModalUpdate ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog2">
+        <div class="modal-content modal-style">
+            <div class="modal-header modalTitle">
+                <h3 class="section-title-modal">{{ 'PURCHASES.ModifierAchat' | translate }}</h3>
+
+
+            </div>
+            <div class="lign-modal"></div>
+
+            <form [formGroup]="EditPurchaseDemandForm" (ngSubmit)="updatePurchaseDemand()">
+                <div class="modal-body">
+
+                    <div class="row inputs">
+                        <div class="col-md-3">
+                            <label class="input-title">{{ 'PURCHASES.Produit' | translate }} </label>
+                        </div>
+                        <div class="col-md-9 ">
+                            <input type="text" class="form-control" formControlName="productName" />
+                        </div>
+                    </div>
+
+                    <div class="row inputs">
+                        <div class="col-md-3">
+                            <label class="input-title">{{ 'PURCHASES.Prix' | translate }}</label>
+                        </div>
+                        <div class="col-md-9 ">
+                            <input type="number" class="form-control" formControlName="price" />
+                        </div>
+                    </div>
+
+                    <div class="row inputs">
+                        <div class="col-md-3">
+                            <label class="input-title">{{ 'PURCHASES.Quantité' | translate }}</label>
+                        </div>
+                        <div class="col-md-9 ">
+                            <input type="number" class="form-control" formControlName="quantity" />
+                        </div>
+                    </div>
+
+                    <div class="row inputs">
+                        <div class="col-md-3">
+                            <label class="input-title">{{ 'PURCHASES.Lien' | translate }}</label>
+                        </div>
+                        <div class="col-md-9 ">
+                            <input type="text" class="form-control" formControlName="link" />
+                        </div>
+                    </div>
+
+                    <div class="row inputs">
+                        <div class="col-md-3">
+                            <label class="input-title">{{ 'PURCHASES.Raison' | translate }}</label>
+                        </div>
+                        <div class="col-md-9 ">
+                            <input type="text" class="form-control" formControlName="need" />
+                        </div>
+                    </div>
+
+                    <div class="row inputs">
+                        <div class="col-md-3">
+                            <label class="input-title">{{ 'PURCHASES.Fournisseur' | translate }}</label>
+                        </div>
+                        <div class="col-md-9 w-75">
+                            <select class="form-control form-control-select" formControlName="providerID">
+                                <option *ngFor="let provider of providers" value="{{provider.providerID}}">
+                                    {{provider.name}}
+                                </option>
+                            </select>
+                            <i class="fas fa-chevron-down chevronDown"></i>
+                            <span class="add w-25" (click)="goToAddProvider()"></span>
+                        </div>
+                        <!-- <div class="col-md-1">
+                            <span class="add" (click)="goToAddProvider()">+</span>
+                        </div> -->
+                    </div>
+
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-retour" (click)="hideModal()">
+                        {{ 'PURCHASES.ANNULER' | translate }}
+                    </button>
+                    <button type="submit" class="btn btn-valid">
+                        {{ 'PURCHASES.AJOUTER' | translate }}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--end Purchase-edit-Demand modal-->

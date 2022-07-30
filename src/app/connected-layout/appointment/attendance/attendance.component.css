@@ -1,0 +1,132 @@
+.cadre{
+  
+    background-color: #F5FAFF;
+    color:#0075D6 ;
+    border-radius: 25px;
+    border: 1px solid;
+    display: inline-block;
+    height: 210px;
+    width: 29%;
+    margin: 0px 2% 2%;
+}
+.cercle{
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    margin: -14px 0;
+}
+.status{
+    margin: 0 12px;
+    font-size: 15px;
+}
+.userimg{ 
+    margin: 10px 0 0 0px;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+}
+.userName{
+color: black;
+}
+.userJob{
+color: black;
+}
+.present{
+    width: 120px;
+    height: 60px;
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 15px;
+}
+.absent{
+    width: 120px;
+    height: 60px;
+    position: absolute;
+    /* top: 213px; */
+    margin: -79px 0;
+    background-color: #A8A8A8;
+    border-radius: 15px;
+}
+.clockIn{
+    color: black;
+    margin: 10px 6px;
+    font-size: 17px;
+}
+.clockOut{
+    color: black;
+    margin: 10px 6px;
+    font-size: 17px;
+}
+.userclock{
+    font-size: 17px;
+    margin: auto;
+}
+.userInfos{
+    font-size: 18px;
+    margin: auto;
+}
+.btn-valid{
+    border-radius: 35px;
+    background-color: #0075D6;
+    color: white;
+    width: 18%;
+    margin-bottom: 15px;
+}
+.date{
+    color: #EF8200;
+}
+
+.filter-container{
+    position: relative;
+}
+.filter{
+    position: absolute;
+    right: 70px;
+    color: #F5FAFF;
+    display: block;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: #0075D6;
+    background-clip: padding-box;
+    border: 1px solid #0075D6;
+    border-radius:19px;
+}
+
+.filterByDate{
+    color: #F5FAFF;
+    display: block;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: #0075D6;
+    background-clip: padding-box;
+    border: 1px solid #0075D6;
+    border-radius: 19px;
+}
+
+.grid{
+    background: url(../../../../assets/icons/noun_List_1954020.svg) no-repeat left center;
+    background-size: contain;
+    height: 22px;
+    width: 50px;
+    margin: auto;
+    position: absolute;
+    bottom: 8px;
+}
+.list{
+    background: url(../../../../assets/icons/th-solid.svg) no-repeat left center;
+    background-size: contain;
+    height: 22px;
+    width: 50px;
+    margin: auto;
+    position: absolute;
+    bottom: 8px;
+    right: -1px;
+}
+
+

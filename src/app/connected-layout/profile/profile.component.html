@@ -1,0 +1,383 @@
+
+<div  >
+    <div class="user-info">
+        <!-- user avatar -->
+        <div class="d-flex justify-content-between ">
+            <h1 style="font-size:bold;">{{fullname}}</h1>
+            <a  class="btn btn-valid" style="background: #0075D6;
+            /* Card Shadow */
+            
+            box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.15);
+            border-radius: 50px; height: 1cm; width: 8cm;" href="/profile/#credentials">{{ 'profile.ChangerMotPasse' | translate }}</a>
+        </div>
+        <h4 style="color: #EF8200; font-weight: bold;">{{job}}</h4>
+    </div>
+    <div class="complete-profile">
+   
+      
+        
+        <div class="profile-status">
+        
+    </div>
+    <section class="infomation-de-base">
+
+        <form [formGroup]="userInformationForm">
+
+
+
+            <div class="form-group">
+                <div class="col-md-9 pen-color">
+                    <div class="d-flex justify-content-between ">
+                        
+
+                        <input  type="file" class="form-control" formControlName="image" (change)="onFileChanged($event)" />
+                        <img [src]="imageSrc" *ngIf="imageSrc" style="height: 100px; width:250px">
+                     
+                            <span class="check" (click)="editImage()"></span>
+                            <span class="cancel" (click)=" cancelEditing()"></span>
+                            <i [style.color]="pen_color" class="fas fa-pen pen-position" (click)="affichePen()"></i>
+                     
+
+                <!---
+                <input  type="file" class="form-control" formControlName="image" (change)="onFileChanged($event)" />
+                <img [src]="imageSrc" *ngIf="imageSrc" style="height: 100px; width:250px">
+             
+                    <span class="check" (click)="editImage()"></span>
+                    <span class="cancel" (click)=" cancelEditing()"></span>
+                    <i [style.color]="pen_color" class="fas fa-pen pen-position" (click)="affichePen()"></i>
+             
+                 
+                    <div *ngIf=retrievedImage>
+                        <img [src]="retrievedImage">
+                    </div>
+                    <a href="#"><img class="card-img-top img-responsive"
+                        src = "{{'http://localhost:8000/api/user/get/image/'+'profile.userid'}}" 
+                        style = "height :200px;width:fil-content"
+                       alt=""></a>
+
+
+                    -->
+
+
+                    
+<!---
+                    <div class="col-md-6">
+                        <input type="file" (change)="onFileChanged($event)">
+                        <img [src]="imageSrc" *ngIf="imageSrc" style="height: 100px; width:250px">
+             
+                        <span class="check" (click)="editImage()"></span>
+                        <span class="cancel" (click)=" cancelEditing()"></span>
+                      
+                    </div>
+                    <div class="col-md-6">
+                        <input type="button" (click)="onUpload()" value="upload">
+                    </div>
+
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" id="name" placeholder="image name" [(ngModel)]="imageName"
+                            name="name" />
+                    </div>
+                    <div class="col-md-6">
+                        <input type="button" (click)="getImage()" value="Get Image">
+                    </div>
+                    <div class="container row">
+                        <div class="col-md-12">
+                            <div *ngIf=retrievedImage>
+                                <img [src]="retrievedImage">
+                            </div>
+                        </div>
+                    </div>     -->
+                    
+                </div>
+
+       
+          
+</div>
+</div>
+
+
+<br>
+
+<h3 class="section-title">{{ 'profile.InformationsBase' | translate }}</h3>
+<div class="lign"></div>
+
+
+            <div class="row inputs">
+                <div class="col-md-3">
+                    <label class="input-title">{{ 'profile.Nom' | translate }} </label>
+                </div>
+                <div class="col-md-9 pen-color">
+                    <div class="d-flex justify-content-between ">
+                        <input type="text" class="form-control" formControlName="lastname"/>
+                        <span class="check" (click)="editLastname()"></span>
+                        <span class="cancel" (click)=" cancelEditing()"></span>
+                        <i [style.color]="pen_color" class="fas fa-pen pen-position" (click)="affichePen()"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row inputs">
+                <div class="col-md-3">
+                    <label class="input-title">{{ 'profile.Prénom' | translate }} </label>
+                </div>
+                <div class="col-md-9 pen-color">
+                    <div class="d-flex justify-content-between ">
+                        <input type="text" class="form-control" formControlName="firstname"/>
+                        <span class="check" (click)="editFirstname()"></span>
+                        <span class="cancel" (click)=" cancelEditing()"></span>
+                        <i [style.color]="pen_color" class="fas fa-pen pen-position" (click)="affichePen()"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row inputs">
+                <div class="col-md-3">
+                    <label class="input-title">{{ 'profile.Genre' | translate }}</label>
+                </div>
+                <div class="col-md-9 pen-color">
+                    <div class="d-flex justify-content-between ">
+                        <span class="check" (click)="editGender()"></span>
+                        <span class="cancel" (click)=" cancelEditing()"></span>
+                        <select type="text" class="form-control" style="border: none;" formControlName="gender" value="Homme">
+                            <option value="HOMME">{{ 'profile.Homme' | translate }}</option>
+                            <option value="FEMME">{{ 'profile.Femme' | translate }}</option>
+                        </select>
+                        <i [style.color]="pen_color" class="fas fa-pen pen-position" (click)="affichePen()"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row inputs">
+                <div class="col-md-3">
+                    <label class="input-title">{{ 'profile.DateNaissance' | translate }}</label>
+                </div>
+                <div class="col-md-9 pen-color">
+                    <div class="d-flex justify-content-between ">
+                        <span class="check" (click)="editDateOfBirth()"></span>
+                        <span class="cancel" (click)=" cancelEditing()"></span>
+                        <input type="date" class="form-control" formControlName="dateOfBirth"  />
+                        <i [style.color]="pen_color" class="fas fa-pen pen-position" (click)="affichePen()"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row inputs">
+                <div class="col-md-3">
+                    <label class="input-title">{{ 'profile.AdresseEmail' | translate }}</label>
+                </div>
+                <div class="col-md-9 pen-color">
+                    <div class="d-flex justify-content-between ">
+                        <span class="check" (click)="editEmail()"></span>
+                        <span class="cancel" (click)=" cancelEditing()"></span>
+                        <input type="text" class="form-control" formControlName="email" />
+                        <i [style.color]="pen_color" class="fas fa-pen pen-position" (click)="affichePen()"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row inputs">
+                <div class="col-md-3">
+                    <label class="input-title">{{ 'profile.Contact' | translate }}</label>
+                </div>
+                <div class="col-md-9 pen-color">
+                    <div class="d-flex justify-content-between ">
+                        <input type="text" class="form-control" formControlName="phone" />
+                        <span class="check" (click)="editPhone()"></span>
+                        <span class="cancel" (click)=" cancelEditing()"></span>
+                        <i [style.color]="pen_color" class="fas fa-pen pen-position" (click)="affichePen()"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row inputs">
+                <div class="col-md-3">
+                    <label class="input-title">{{ 'profile.ÉtatCivil' | translate }}</label>
+                </div>
+                <div class="col-md-9 pen-color">
+                    <div class="d-flex justify-content-between ">
+                        <input type="text" class="form-control" formControlName="civilisation" />
+                        <span class="check" (click)="editCivilStatus()"></span>
+                        <span class="cancel" (click)=" cancelEditing()"></span>
+                        <i [style.color]="pen_color" class="fas fa-pen pen-position" (click)="affichePen()"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row inputs">
+                <div class="col-md-3">
+                    <label class="input-title">{{ 'profile.Adresse' | translate }}</label>
+                </div>
+                <div class="col-md-9 pen-color">
+                    <div class="d-flex justify-content-between ">
+                        <span class="check" (click)="editAddress()"></span>
+                        <span class="cancel" (click)=" cancelEditing()"></span>
+                        <input type="text" class="form-control" formControlName="address" />
+                        <i [style.color]="pen_color" class="fas fa-pen pen-position" (click)="affichePen()"></i>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <section class="poste">
+        <h3 class="section-title">{{ 'profile.Poste' | translate }}</h3>
+        <div class="lign"></div>
+        <form [formGroup]="userJobForm">
+            <div class="row inputs">
+                <div class="col-md-3">
+                    <label class="input-title">{{ 'profile.PosteOccupé' | translate }}</label>
+                </div>
+                <div class="col-md-9 pen-color" >
+                    <div class="d-flex justify-content-between ">
+                        <input type="text"  class="form-control" formControlName="job"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row inputs">
+                <div class="col-md-3">
+                    <label class="input-title">{{ 'profile.DateEntrée' | translate }}</label>
+                </div>
+                <div class="col-md-9 pen-color">
+                    <div class="d-flex justify-content-between ">
+                        <input type="text" class="form-control" formControlName="startDate"  />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row inputs">
+                <div class="col-md-3">
+                    <label class="input-title">{{ 'profile.Rôle' | translate }}</label>
+                </div>
+                <div class="col-md-9 pen-color">
+                    <div class="d-flex justify-content-between ">
+                        <input type="text" class="form-control" formControlName="role"  />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <section class="Reseaux-sociaux">
+        <h3 class="section-title">{{ 'profile.RéseauSocial' | translate }}</h3>
+        <div class="lign"></div>
+        <form [formGroup]="userSocialForm">
+            <div class="row inputs">
+                <div class="col-md-3">
+                    <label class="input-title">{{ 'profile.Slack' | translate }}</label>
+                </div>
+                <div class="col-md-9 pen-color">
+                    <div class="d-flex justify-content-between ">
+                        <input type="text" class="form-control" formControlName="slack"/>
+                        <span class="check" (click)="editSlack()"></span>
+                        <span class="cancel" (click)=" cancelEditing()"></span>
+                        <i [style.color]="pen_color" class="fas fa-pen pen-position" (click)="affichePen()"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row inputs">
+                <div class="col-md-3">
+                    <label class="input-title">{{ 'profile.Discrod' | translate }}</label>
+                </div>
+                <div class="col-md-9 pen-color">
+                    <div class="d-flex justify-content-between ">
+                        <input type="text" class="form-control" formControlName="discord"/>
+                        <span class="check" (click)="editDiscord()"></span>
+                        <span class="cancel" (click)=" cancelEditing()"></span>
+                        <i [style.color]="pen_color" class="fas fa-pen pen-position" (click)="affichePen()"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row inputs">
+                <div class="col-md-3">
+                    <label class="input-title">{{ 'profile.Facebook' | translate }}</label>
+                </div>
+                <div class="col-md-9 pen-color">
+                    <div class="d-flex justify-content-between ">
+                        <input type="text" class="form-control" formControlName="facebook"/>
+                        <span class="check" (click)="editFacebook()"></span>
+                        <span class="cancel" (click)=" cancelEditing()"></span>
+                        <i [style.color]="pen_color" class="fas fa-pen pen-position" (click)="affichePen()"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row inputs">
+                <div class="col-md-3">
+                    <label class="input-title">{{ 'profile.LinkedIn' | translate }}</label>
+                </div>
+                <div class="col-md-9 pen-color">
+                    <div class="d-flex justify-content-between ">
+                        <input type="text" class="form-control" formControlName="linkedin"/>
+                        <span class="check" (click)="editLinkedin()"></span>
+                        <span class="cancel" (click)=" cancelEditing()"></span>
+                        <i [style.color]="pen_color" class="fas fa-pen pen-position" (click)="affichePen()"></i>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <section class="securite" id="credentials">
+        <h3 class="section-title" >{{ 'profile.CoordonnéesConnexion' | translate }}</h3>
+        <div class="lign"></div>
+
+        <form [formGroup]="userCredentialsForm">
+            <div class="row inputs">
+                <div class="col-md-3">
+                    <label class="input-title">{{ 'profile.NomUtilisateur' | translate }}</label>
+                </div>
+                <div class="col-md-9 pen-color">
+                    <div class="d-flex justify-content-between ">
+                        <input type="text" class="form-control" formControlName="username"/>
+                        <span class="check" (click)="editUsername()"></span>
+                        <span class="cancel" (click)=" cancelEditing()"></span>
+                        <i [style.color]="pen_color" class="fas fa-pen pen-position" (click)="affichePen()"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row inputs">
+                <div class="col-md-3">
+                    <label class="input-title">{{ 'profile.AncienMotPasse' | translate }}</label>
+                </div>
+                <div class="col-md-9 pen-color">
+                    <div class="d-flex justify-content-between ">
+                        <input type="password" class="form-control" formControlName="oldPassword"/>
+                        <i [style.color]="pen_color" class="fas fa-pen pen-position" (click)="affichePen()"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row inputs">
+                <div class="col-md-3">
+                    <label class="input-title">{{ 'profile.NouveauMotPasse' | translate }}</label>
+                </div>
+                <div class="col-md-9 pen-color">
+                    <div class="d-flex justify-content-between ">
+                        <input type="password" class="form-control" formControlName="newPassword"/>
+                        <i [style.color]="pen_color" class="fas fa-pen pen-position" (click)="affichePen()"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row inputs">
+                <div class="col-md-3">
+                    <label class="input-title">{{ 'profile.Confirmer' | translate }}</label>
+                </div>
+                <div class="col-md-9 pen-color">
+                    <div class="d-flex justify-content-between ">
+                        <input type="password" class="form-control" formControlName="confirmPassword"/>
+                        <span class="check" (click)="changePassword()"></span>
+                        <span class="cancel" (click)=" cancelEditing()"></span>
+                        <i [style.color]="pen_color" class="fas fa-pen pen-position" (click)="affichePen()"></i>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+
+  
+
+</div>
+

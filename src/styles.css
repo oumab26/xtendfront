@@ -1,0 +1,387 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+
+@font-face {
+    font-family: 'Lato-Bold';
+    src: url('../src/assets/fonts/Lato/Lato-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Lato-Regular';
+    src: url('../src/assets/fonts/Lato/Lato-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Lato-Light';
+    src: url('../src/assets/fonts/Lato/Lato-Light.ttf') format('truetype');
+}
+
+.mat-menu-trigger {
+    background: transparent !important; 
+    border: none !important;
+}
+
+.btn-sign {
+    width: 100%;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    border: none;
+    color: #FFFFFF;
+    border-radius: 16px;
+    font-size: 15px;
+    font-family: 'Lato-Bold';
+    text-transform: uppercase;
+    letter-spacing: 0.03px;
+}
+
+.btn-sign-in {
+    background-color:#0071F2;
+    color: #FFFFFF;
+}
+
+.eye {
+    cursor: pointer;
+}
+
+
+/* .btn-sign-in:hover {
+    background-color: red;
+} */
+
+.btn-sign-up {
+    background-color: transparent;
+    color: #000000;
+    border: 2px solid #000000;
+}
+
+/* * {
+    overflow: hidden;
+} */
+/*
+ .col-md-2 .mat-form-field-appearance-legacy .mat-form-field-infix {
+    padding: 0.4375em 0;
+    width: 15%;
+    background:  white 0% 0% no-repeat padding-box;
+}  */
+
+
+.col-md-2  {
+    width: 35%;
+  
+    background: linear-gradient(91.16deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.2) 100%);
+    /* Glass Effect */
+    
+    box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(40px);
+    /* Note: backdrop-filter has minimal browser support */
+    
+    border-radius: 16px;
+}  
+
+.mat-form-field-appearance-legacy .mat-form-field-wrapper {
+    padding-bottom: 1.25em;
+    margin-top: -12px;
+  
+ 
+  }
+
+  .mat-stepper-label-position-bottom .mat-horizontal-stepper-header-container {
+    align-items: flex-start;
+
+    font-size: 25px;
+  left: 49.06%;
+right: 49.11%;
+top: 24.81%;
+bottom: 71.94%;
+
+/* Primary/blue */
+
+background: #0075D6;
+border-radius: 12px;
+
+
+ 
+
+}
+
+
+
+.col-md-10{
+    width: 35%;
+  
+    background: linear-gradient(91.16deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.2) 100%);
+    /* Glass Effect */
+    
+    box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(40px);
+    /* Note: backdrop-filter has minimal browser support */
+    
+    border-radius: 16px;
+} 
+
+.mat-horizontal-content-container {
+    overflow: hidden;
+    padding: 0 24px 24px 24px;
+  
+   
+}
+.mat-step-header:hover {
+   background: transparent !important; 
+ 
+    
+}
+.mat-horizontal-stepper-header-container {
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+  background: transparent !important; 
+  height:  0.25cm;
+
+
+
+}
+
+
+.mat-step-icon-content{
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    top: 10%;
+    bottom: 50%;
+    
+    /* Primary/blue */
+    
+    background: #0075D6;
+    border-radius: 12px;
+
+    font-family: 'Lato';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 25px;
+display: flex;
+align-items: center;
+
+color: #FFFFFF;
+
+}
+input.mat-input-element {
+
+    width: 420px;
+    height: 50px;
+    left: 662px;
+    top: 463px;
+    border: none;
+    background: #FFFFFF;
+    /* Card Shadow */
+ 
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+
+  
+
+}
+
+
+.emailField{
+
+  margin-top: 10px;
+  font-size: 15px;
+  text-align: left;
+  color: #3D3D3D;
+  line-height: 2em;
+
+  font-family: 'Lato';
+  font-style: normal;
+
+}
+.passwordField{
+    margin-top: 10px;
+    font-size: 15px;
+    text-align: left;
+    color: #3D3D3D;
+    line-height: 2em;
+  
+    font-family: 'Lato';
+    font-style: normal;
+}
+
+.section-title-modal{
+    color: #EF8200;
+    font-weight: bold;
+    margin-bottom: 0px;
+    width: 35%;
+    text-align: left;
+}
+
+.modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    border-bottom: white;
+    border-top-left-radius: calc(.3rem - 1px);
+    border-top-right-radius: calc(.3rem - 1px);
+}
+.modal-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: .75rem;
+    border-top: white;
+    border-bottom-right-radius: calc(.3rem - 1px);
+    border-bottom-left-radius: calc(.3rem - 1px);
+}
+.modal {
+    background-color:rgba(5, 28, 55, 0.3);
+    /* display: flex; */
+    align-items: start;
+
+}
+
+.lign-modal{
+    background-color:#EF8200 ;
+    height: 1px;
+    width: 100%;
+    margin-top: -1px;
+    margin-bottom: 0%;
+}
+
+.modal-content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-radius: 20px !important;
+    padding: 0 45px !important;
+    outline: 0;
+}
+
+.btn-retour{
+    border-radius: 11px !important;
+    background-color: #F5FAFF !important;
+    color: #0075D6 !important;
+    width: 25%;  
+}
+.btn-valid{
+    border-radius: 11px !important;
+    background-color: #0075D6 !important;
+    color: #FFFFFF !important;
+    width: 25%;
+}
+
+.rejected{
+    color:#EA1601;
+}
+.accepted{
+    color:#64BC26;
+}
+.pending{
+    color:#FAD202;
+}
+
+.mat-form-field-infix {
+    display: block;
+    position: relative;
+    flex: auto;
+    min-width: 0;
+    width: 15px !important;
+    height: 2cm;
+}
+
+.first-title{
+    
+width: 159px;
+height: 38px;
+left: 452px;
+top: 192px;
+
+font-family: 'Lato';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 38px;
+display: flex;
+align-items: center;
+
+/* Primary/blue */
+
+color: #0075D6;
+}
+
+.cal-month-view .cal-event {
+    width: 50px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: auto;
+}
+
+.nav-item:focus {
+    color: white;
+    background-color: #0075D6;;
+    border-radius: 16px 16px 0px 0px;
+    text-align: center;
+}
+
+mat-accordion .mat-expansion-panel:not(.mat-expanded), .mat-accordion .mat-expansion-panel:not(.mat-expansion-panel-spacing) {
+    border-radius: 16px !important;
+    background-color: #F5FAFF;
+    margin: 12px auto;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/**ouma add*/
+
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  align-items: center;
+    background-image: url('./assets/Logo/arriere.svg');
+    background-size: 45%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+   
+   
+  }
+  
+  .content-login {
+  
+    border-radius: 32px;
+    padding: 56px;
+    width: 35%;
+   height:  90%;
+    font-family: 'Lato light';
+    box-sizing: border-box;
+  
+  position: absolute;
+  
+  
+  background: linear-gradient(149.55deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.2) 99.42%);
+  /* Glass Effect */
+  
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(15px);
+  
+  /* Note: backdrop-filter has minimal browser support */
+  }
+  .emailField{
+  
+    margin-top: 30px;
+    font-size: 15px;
+    text-align: left;
+    color: #3D3D3D;
+    line-height: 2em;
+  
+    font-family: 'Lato';
+    font-style: normal;
+  
+  }

@@ -1,0 +1,121 @@
+.vertical-line{
+    border-left: 3px solid #D27AC5;
+    display: inline-block;
+    height: 190px;
+    margin: auto;
+  }
+
+  .titre{
+
+    font-family: 'Lato';
+font-style: normal;
+color: #CB48B7;
+font-size: 30px;
+line-height: 48px;
+      text-align: right;
+      font-weight: bold;
+      margin-top: 10%;
+  }
+  .digitalTime{ 
+      background-color: #F5FAFF;  
+      border-radius: 13%;
+  }
+  .digitalClock{
+    font-size: 25px;
+    font-weight: bold;
+    color: #0075D6;
+    height: 25%;
+    text-align: center;
+    margin: 0 0 0 6%;
+  }
+  .hours{
+      text-align: center;
+      margin: 31% 0;
+  }
+  .point{
+       margin: 10px 0; 
+  }
+  .cercle{
+    width: 4px;
+    height: 4px;
+    border-radius: 2px;
+    background: #001833;
+  }
+  .digitalDate{
+
+    
+font-family: 'Lato';
+font-style: normal;
+
+align-items: flex-end;
+
+/* Neutral/black */
+
+color: #3D3D3D;
+
+      text-align: left;
+      font-size: 30px;
+    
+      margin-top: 6%;
+
+
+  }
+  .pointage{
+      margin-top: 7%;
+  }
+  .chevronDown{
+      color: white;
+      position: absolute;
+      left: 72%;
+      top: 62%;
+      font-size: 20px;
+
+  }
+  .form-control {
+    margin: 0 auto;
+    float: none;
+    
+    display: block;
+    width: 40%;
+    
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: #0075D6;
+    background-clip: padding-box;
+    border: 1px solid #0075D6;
+    border-radius:19px;
+    color: white;
+   
+}
+.section-title{
+    color: #0075D6;
+    font-weight: bold;
+    margin-bottom: 0px;
+    text-align: left;
+}
+.lign{
+    background-color:#0075D6 ;
+    height: 1px;
+    width: 100%;
+    margin-top: 4px;
+
+}
+.tab{
+    background-color: #F5FAFF;
+    width: 100%;
+    margin: auto;
+    height: 50px;
+}
+.colonTitle{
+    font-size: 20px;
+    margin-top: 17px;
+}
+.tabElements{
+    width: 100%;
+    margin: auto;
+    height: 50px;
+}
+ 

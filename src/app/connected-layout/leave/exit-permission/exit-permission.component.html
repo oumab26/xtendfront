@@ -1,0 +1,120 @@
+
+<section class="">
+    <div class="row">
+        <div class="col-md-10"></div>
+        <div class="col-md-2">
+            <button type="submit" style="width: 106%; margin-left: -9%;" class="btn-sign btn-sign-in"(click)="addLeaveDemand()">{{ 'exitPERMISSION.DemanderSortie' | translate }}</button>
+        </div>
+    </div>
+    
+    <h3 class="section-title">{{ 'exitPERMISSION.DemandeAttente' | translate }}</h3>
+    <div class="lign"></div>
+    <div class="row tab">
+        <div class="col-md-3 colonTitle">{{ 'exitPERMISSION.DateSortie' | translate }}</div>
+        <div class="col-md-2 colonTitle" style="padding-left: 3%;">{{ 'exitPERMISSION.De' | translate }}</div>
+        <div class="col-md-2 colonTitle" style="padding-left: 3%;">{{ 'exitPERMISSION.À' | translate }}</div>
+        <div class="col-md-3 colonTitle">{{ 'exitPERMISSION.Raison' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'exitPERMISSION.Etat' | translate }}</div>
+    </div>
+
+    <div class="row tabElements"*ngFor="let item of userPendingDemands" >
+        <div class="col-md-3 colonTitle">{{item.date | date: 'dd  MMM  yyyy'}}</div>
+        <div class="col-md-2 colonTitle">{{item.exitTime[0]}}:{{item.exitTime[1]}}</div>
+        <div class="col-md-2 colonTitle">{{item.returnTime[0]}}:{{item.returnTime[1]}}</div>
+        <div class="col-md-3 colonTitle"><span>{{item.reason}}</span></div>
+        <div class="col-md-2 colonTitle" 
+        [ngClass]="{ 'rejected': item.status==='REJECTED',
+                     'accepted': item.status==='ACCEPTED',
+                     'pending': item.status==='PENDING'}">{{item.status | titlecase}}</div>
+        <div class="lign"></div>
+        
+    </div>
+
+</section>
+
+
+<section class="">
+    <h3 class="section-title">{{ 'exitPERMISSION.historique' | translate }}</h3>
+    <div class="lign"></div>
+    <div class="row tab">
+        <div class="col-md-3 colonTitle">{{ 'exitPERMISSION.DateSortie' | translate }}</div>
+        <div class="col-md-2 colonTitle" style="padding-left: 3%;">{{ 'exitPERMISSION.De' | translate }}</div>
+        <div class="col-md-2 colonTitle" style="padding-left: 3%;">{{ 'exitPERMISSION.À' | translate }}</div>
+        <div class="col-md-3 colonTitle">{{ 'exitPERMISSION.Raison' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'exitPERMISSION.Etat' | translate }}</div>
+    </div>
+
+    <div class="row tabElements" *ngFor="let item of userExitPermission">
+        <div class="col-md-3 colonTitle">{{item.date | date: 'dd  MMM  yyyy'}}</div>
+        <div class="col-md-2 colonTitle">{{item.exitTime[0]}}:{{item.exitTime[1]}}</div>
+        <div class="col-md-2 colonTitle">{{item.returnTime[0]}}:{{item.returnTime[1]}}</div>
+        <div class="col-md-3 colonTitle"><span>{{item.reason}}</span></div>
+        <div class="col-md-2 colonTitle" 
+        [ngClass]="{ 'rejected': item.status==='REJECTED',
+                     'accepted': item.status==='ACCEPTED',
+                     'pending': item.status==='PENDING'}">{{item.status | titlecase}}</div>
+        <div class="lign"></div>
+    </div>
+    
+</section>
+<!--leave-Demand Modal-->
+<div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog2">
+        <div class="modal-content modal-style">
+            <div class="modal-header modalTitle">
+                <h3 class="section-title-modal">{{ 'exitPERMISSION.DemanderSortie' | translate }}</h3>
+
+
+            </div>
+            <div class="lign-modal"></div>
+
+            <form [formGroup]="ExitDemandForm" (ngSubmit)="addExitDemand()">
+                <div class="modal-body">
+
+                    <div class="row inputs">
+                        <div class="col-md-3">
+                            <label class="input-title">{{ 'exitPERMISSION.DateSortie' | translate }}</label>
+                        </div>
+                        <div class="col-md-9 ">
+                            <input type="date" class="form-control" formControlName="date" />
+                        </div>
+                    </div>
+
+                    <div class="row inputs">
+                        <div class="col-md-3">
+                            <label class="input-title">{{ 'exitPERMISSION.Lesheures' | translate }}</label>
+                        </div>
+                        <div class="col-md-4 ">
+                            <input type="time" class="form-control" formControlName="exitTime" />
+                        </div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4 ">
+                            <input type="time" class="form-control" formControlName="returnTime" />
+                        </div>
+                    </div>
+
+                    <div class="row inputs">
+                        <div class="col-md-3">
+                            <label class="input-title">{{ 'exitPERMISSION.Raison' | translate }}</label>
+                        </div>
+                        <div class="col-md-9 ">
+                            <input type="text" class="form-control" formControlName="reason" />
+                        </div>
+                    </div>
+
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-retour" (click)="hideModal()">
+                        {{ 'exitPERMISSION.ANNULER' | translate }}
+                    </button>
+                    <button type="submit" class="btn btn-valid">
+                        {{ 'exitPERMISSION.AJOUTER' | translate }}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--end leave-Demand modal-->

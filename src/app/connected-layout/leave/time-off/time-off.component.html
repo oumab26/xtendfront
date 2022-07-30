@@ -1,0 +1,129 @@
+<section >
+    <div class="row">
+        <div class="col-md-10"></div>
+        <div class="col-md-2">
+            <button type="submit" class="btn-sign btn-sign-in" (click)="addDemand()">{{ 'TimeOff.DemanderCongé' | translate }}</button>
+        </div>
+    </div>
+
+    <h3 class="section-title">{{ 'TimeOff.DemandeAttente' | translate }}</h3>
+    <div class="lign"></div>
+    <div class="row tab">
+        <div class="col-md-3 colonTitle">{{ 'TimeOff.DateDébut' | translate }}</div>
+        <div class="col-md-3 colonTitle">{{ 'TimeOff.NombreJours' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'TimeOff.TypeCongé' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'TimeOff.Raison' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'TimeOff.Etat' | translate }}</div>
+    </div>
+
+    <div class="row tabElements" *ngFor="let item of userPendingDemands">
+        <div class="col-md-3 colonTitle">{{item.startDate | date: 'dd  MMM  yyyy'}}</div>
+        <div class="col-md-3 colonTitle">{{item.numberOfDays}}</div>
+        <div class="col-md-2 colonTitle"><span>{{item.type}}</span></div>
+        <div class="col-md-2 colonTitle"><span>{{item.reason}}</span></div>
+        <div class="col-md-2 colonTitle" style="color: #FAD202;">{{item.status | titlecase}}</div>
+        <div class="lign"></div>
+    </div>
+    
+
+</section>
+
+
+<section >
+    <h3 class="section-title">{{ 'TimeOff.Historique' | translate }}</h3>
+    <div class="lign"></div>
+    <div class="row tab">
+        <div class="col-md-3 colonTitle">{{ 'TimeOff.DateDébut' | translate }}</div>
+        <div class="col-md-3 colonTitle">{{ 'TimeOff.NombreJours' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'TimeOff.TypeCongé' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'TimeOff.Raison' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'TimeOff.Etat' | translate }}</div>
+    </div>
+
+    <div class="row tabElements" *ngFor="let item of userTimeOff">
+        <div class="col-md-3 colonTitle">{{item.startDate | date: 'dd  MMM  yyyy'}}</div>
+        <div class="col-md-3 colonTitle">{{item.numberOfDays}}</div>
+        <div class="col-md-2 colonTitle"><span>{{item.type}}</span></div>
+        <div class="col-md-2 colonTitle"><span>{{item.reason}}</span></div>
+        <div class="col-md-2 colonTitle" 
+        [ngClass]="{ 'rejected': item.status==='REJECTED',
+                     'accepted': item.status==='ACCEPTED',
+                     'pending': item.status==='PENDING'}">{{item.status | titlecase}}</div>
+        <div class="lign"></div>
+    </div>
+
+</section>
+
+
+
+
+<!--timeOff-Demand Modal-->
+<div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog2">
+        <div class="modal-content modal-style">
+            <div class="modal-header modalTitle">
+                <h3 class="section-title-modal">{{ 'TimeOff.DemanderCongé' | translate }}</h3>
+
+
+            </div>
+            <div class="lign-modal"></div>
+
+            <form [formGroup]="TimeOffDemandForm" (ngSubmit)="addTimeOffDemand()">
+                <div class="modal-body">
+
+                    <div class="row inputs">
+                        <div class="col-md-4">
+                            <label class="input-title">{{ 'TimeOff.DateDébut' | translate }}</label>
+                        </div>
+                        <div class="col-md-8 ">
+                            <input type="date" class="form-control" formControlName="startDate" />
+                        </div>
+                    </div>
+
+                    <div class="row inputs">
+                        <div class="col-md-4">
+                            <label class="input-title">{{ 'TimeOff.NombreJours' | translate }}</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="number" class="form-control" formControlName="numberOfDays" />
+                        </div>
+                    </div>
+
+                    <div class="row inputs">
+                        <div class="col-md-4 input-title">
+                            <label>{{ 'TimeOff.TypeCongé' | translate }}</label>
+                        </div>
+                        <div class="col-md-8 ">
+                            <select class="form-control" style="margin-bottom: 9px;"  formControlName="type">
+                                <option value="CP">CP</option>
+                                <option value="RTT">RTT</option>
+                            </select>
+                            <i class="fas fa-chevron-down chevronDown"></i>
+                        </div>
+                    </div>
+
+                    <div class="row inputs">
+                        <div class="col-md-4 input-title">
+                            <label >{{ 'TimeOff.Raison' | translate }}</label>
+                        </div>
+                        <div class="col-md-8">
+                             <input type="text" class="form-control" formControlName="reason" />
+                        </div>
+                    </div>
+
+                    
+                </div>
+                <div class="modal-footer ">
+                    <button type="button" class="btn btn-retour" (click)="hideModal()">
+                        {{ 'TimeOff.ANNULER' | translate }}
+                    </button>
+                    <button type="submit" class="btn btn-valid">
+                        {{ 'TimeOff.AJOUTER' | translate }}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--end timeOff-Demand modal-->

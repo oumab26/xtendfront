@@ -1,0 +1,252 @@
+<div>
+    <div class="user-info">
+        <!-- user avatar -->
+        <div class="d-flex justify-content-between ">
+            <h1 style="font-size:bold;">{{user?.firstname}} {{user?.lastname}}</h1>
+            <a class="btn btn-valid" href="/update-profile/{{user?.userId}}/#poste">{{ 'profile.ChangerRôle' | translate }}</a>
+        </div>
+        <h4 style="color: #EF8200; font-weight: bold;">{{user?.job?.jobName}}</h4>
+    </div>
+    <div class="complete-profile">
+
+        <div class="profile-status">
+            <div class="profile-part">
+                <div class="button-done" [ngStyle]="{'background' : basicInformation ? '#EF8200':'#9E9E9E'}">
+                    <i *ngIf="socialMediaInformation" class="far fa-check centered-icon button-content" id="i-button-content"></i>
+                    <p *ngIf="!socialMediaInformation" class="button-content" style="text-align: center;padding-top: 10px;">?</p>
+                </div>
+                <p class="profile-part-label">{{ 'profile.InformationsBase' | translate }}</p>
+            </div>
+            <div class="wire">
+                <div class="ligne w-100" [ngStyle]="{'background' : basicInformation ? '#EF8200':'#9E9E9E'}"></div>
+            </div>
+            <div class="profile-part">
+                <div class="button-done" style="background: '#EF8200';"><i class="far fa-check centered-icon button-content" id="i-button-content"></i></div>
+                <p class="profile-part-label">{{ 'profile.Poste' | translate }}</p>
+            </div>
+            <div class="wire">
+                <div>
+                    <div class="ligne w-100" [ngStyle]="{'background' : socialMediaInformation ? '#EF8200':'#9E9E9E'}"></div>
+                </div>
+            </div>
+            <div class="profile-part">
+                <div class="button-done" [ngStyle]="{'background' : socialMediaInformation ? '#EF8200':'#9E9E9E'}">
+                    <i *ngIf="socialMediaInformation" class="far fa-check centered-icon button-content" id="i-button-content"></i>
+                    <p *ngIf="!socialMediaInformation" class="button-content" style="text-align: center;padding-top: 10px;">?</p>
+                </div>
+                <p class="profile-part-label">{{ 'profile.RéseauSocial' | translate }}</p>
+            </div>
+        </div>
+
+        <!-- <div class="row ">
+            <div class="col-md-1">
+                <div class="button-done" [ngStyle]="{'background' : basicInformation ? '#EF8200':'#9E9E9E'}">
+                    <i *ngIf="basicInformation" class="far fa-check centered-icon"></i>
+                    <p *ngIf="!basicInformation" style="text-align: center;">?</p>
+                </div>
+                <p>Informations de base</p>
+            </div>
+            <div class="col-md-5">
+                <div class="ligne w-100" [ngStyle]="{'background' : basicInformation ? '#EF8200':'#9E9E9E'}"></div>
+            </div>
+            <div class="col-md-1">
+                <div class="button-done" style="background: '#EF8200';"><i class="far fa-check centered-icon"></i></div>
+                <p>Poste</p>
+            </div>
+            <div class="col-md-4">
+                <div class="ligne w-100" [ngStyle]="{'background' : socialMediaInformation ? '#EF8200':'#9E9E9E'}">
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="button-done" [ngStyle]="{'background' : socialMediaInformation ? '#EF8200':'#9E9E9E'}">
+                    <i *ngIf="socialMediaInformation" class="far fa-check centered-icon"></i>
+                    <p *ngIf="!socialMediaInformation" style="text-align: center;">?</p>
+                </div>
+                <p>Réseau social</p>
+            </div>
+        </div> -->
+    </div>
+    <section class="infomation-de-base">
+
+        <h3 class="section-title">{{ 'profile.InformationsBase' | translate }}</h3>
+        <div class="lign"></div>
+        <div class="row inputs" *ngIf="user?.firstname">
+            <div class="col-md-3">
+                <label class="input-title">{{ 'profile.Nom' | translate }}</label>
+            </div>
+            <div class="col-md-9 ">
+                {{user?.firstname}}
+            </div>
+        </div>
+
+        <div class="row inputs" *ngIf="user?.lastname">
+            <div class="col-md-3">
+                <label class="input-title">{{ 'profile.Prénom' | translate }}</label>
+            </div>
+            <div class="col-md-9 ">
+                {{user?.lastname}}
+            </div>
+        </div>
+
+        <div class="row inputs" *ngIf="user?.gender">
+            <div class="col-md-3">
+                <label class="input-title">{{ 'profile.Genre' | translate }}Genre</label>
+            </div>
+            <div class="col-md-9 ">
+                {{user?.gender}}
+            </div>
+        </div>
+
+        <div class="row inputs" *ngIf="user?.dateOfBirth">
+            <div class="col-md-3">
+                <label class="input-title">{{ 'profile.DateNaissance' | translate }}</label>
+            </div>
+            <div class="col-md-9 ">
+                {{user?.dateOfBirth[2]}}/{{user?.dateOfBirth[1]}}/{{user?.dateOfBirth[0]}}
+            </div>
+        </div>
+
+        <div class="row inputs" *ngIf="user?.email">
+            <div class="col-md-3">
+                <label class="input-title">{{ 'profile.AdresseEmail' | translate }}</label>
+            </div>
+            <div class="col-md-9 ">
+                {{user?.email}}
+            </div>
+        </div>
+
+        <div class="row inputs" *ngIf="user?.phone">
+            <div class="col-md-3">
+                <label class="input-title">{{ 'profile.Contact' | translate }}</label>
+            </div>
+            <div class="col-md-9 ">
+                {{user?.phone}}
+            </div>
+        </div>
+
+        <div class="row inputs" *ngIf="user?.civilStatus">
+            <div class="col-md-3">
+                <label class="input-title">{{ 'profile.ÉtatCivil' | translate }}</label>
+            </div>
+            <div class="col-md-9 ">
+                {{user?.civilStatus}}
+            </div>
+        </div>
+
+        <div class="row inputs" *ngIf="user?.address">
+            <div class="col-md-3">
+                <label class="input-title">{{ 'profile.Adresse' | translate }}</label>
+            </div>
+            <div class="col-md-9 ">
+                {{user?.address}}
+            </div>
+        </div>
+    </section>
+
+    <section class="poste" id="poste">
+        <h3 class="section-title">{{ 'profile.Poste' | translate }}</h3>
+        <div class="lign"></div>
+        <div class="row inputs" *ngIf="user?.job?.jobName">
+            <div class="col-md-3">
+                <label class="input-title">{{ 'profile.PosteOccupé' | translate }}</label>
+            </div>
+            <div class="col-md-9 ">
+                {{user?.job.jobName}}
+            </div>
+        </div>
+
+        <div class="row inputs" *ngIf="user?.joinedUs">
+            <div class="col-md-3">
+                <label class="input-title">{{ 'profile.DateEntrée' | translate }}</label>
+            </div>
+            <div class="col-md-9 ">
+                {{user?.joinedUs[2]}}/{{user?.joinedUs[1]}}/{{user?.joinedUs[0]}}
+            </div>
+        </div>
+
+        <div class="row inputs" *ngIf="user?.role.roleName">
+            <div class="col-md-3">
+                <label class="input-title">{{ 'profile.Rôle' | translate }}</label>
+            </div>
+           <div class="col-md-9">
+            <input type="checkbox" name="test" class="box" [checked]="currentlyChecked === check_box_type.EMPLOYEE" (click)="selectCheckBox(check_box_type.EMPLOYEE)"><span class="checkbox">{{ 'profile.employé' | translate }}</span>
+            <input type="checkbox" name="test" class="box" [checked]="currentlyChecked === check_box_type.RH" (click)="selectCheckBox(check_box_type.RH)"><span class="checkbox">{{ 'profile.ResponsableRH' | translate }}</span>
+            <input type="checkbox" name="test" class="box" [checked]="currentlyChecked === check_box_type.MANAGER" (click)="selectCheckBox(check_box_type.MANAGER)"><span class="checkbox">{{ 'profile.manager' | translate }}</span>
+            <input type="checkbox" name="test" class="box" [checked]="currentlyChecked === check_box_type.INTERN" (click)="selectCheckBox(check_box_type.INTERN)"><span class="checkbox">{{ 'profile.stagiaire' | translate }}</span>
+            <input type="checkbox" name="test" class="box" [checked]="currentlyChecked === check_box_type.CONSULTANT" (click)="selectCheckBox(check_box_type.CONSULTANT)"><span class="checkbox">{{ 'profile.consultant' | translate }}</span>  
+           </div>
+        </div>
+    </section>
+
+    <section class="Reseaux-sociaux">
+        <h3 class="section-title">{{ 'profile.RéseauSocial' | translate }}</h3>
+        <div class="lign"></div>
+        <div class="row inputs" *ngIf="user?.slack">
+            <div class="col-md-3">
+                <label class="input-title">{{ 'profile.Slack' | translate }}</label>
+            </div>
+            <div class="col-md-9 ">
+                {{user?.slack}}
+            </div>
+        </div>
+
+        <div class="row inputs" *ngIf="user?.discord">
+            <div class="col-md-3">
+                <label class="input-title">{{ 'profile.Discrod' | translate }}</label>
+            </div>
+            <div class="col-md-9 ">
+                {{user?.discord}}
+            </div>
+        </div>
+
+        <div class="row inputs" *ngIf="user?.facebook">
+            <div class="col-md-3">
+                <label class="input-title">{{ 'profile.Facebook' | translate }}</label>
+            </div>
+            <div class="col-md-9 ">
+                {{user?.facebook}}
+            </div>
+        </div>
+
+        <div class="row inputs" *ngIf="user?.linkedin">
+            <div class="col-md-3">
+                <label class="input-title">{{ 'profile.LinkedIn' | translate }}</label>
+            </div>
+            <div class="col-md-9 ">
+                {{user?.linkedin}}
+            </div>
+        </div>
+    </section>
+
+
+    <!--delete-user Modal-->
+<div [style.display]="showValidateModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog"
+aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog1 modal-dialog-centered modal-dialog2">
+  <div class="modal-content delete-modal-style">
+    <div class="modal-header modalTitle">
+      <div class="corbeille"><i class="fas fa-check check"></i></div>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="hideValidateModal()">
+        <span aria-hidden="true" >&times;</span>
+      </button>
+      
+    </div>
+    
+    <div class="modal-body trash-body">
+      <div>{{ 'profile.ChangerRole' | translate }}</div>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-annuler" (click)="hideValidateModal()">
+        {{ 'profile.ANNULER' | translate }}
+      </button>
+      <button type="button" class="btn btn-supprim" (click)="changeRole()" >
+        {{ 'profile.VALIDER' | translate }}
+      </button>
+</div>
+  </div>
+</div>
+</div>
+<!--end delete-user modal-->
+
+</div>

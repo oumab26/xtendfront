@@ -1,0 +1,170 @@
+<div class="dashboard-content">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="greeting">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1>{{ 'Dashboard.Bonjour' | translate }} {{userFirstLast}}</h1>
+                        <p *ngIf="permission >= 4">{{ 'Dashboard.VousAvezDesnouvellesDemandes' | translate }}</p>
+                        <p *ngIf="permission >= 4">{{ 'Dashboard.VérifierDemandes' | translate }}</p>
+                        <button class="check-demand" *ngIf="permission >= 4">{{ 'Dashboard.VOIRLESDEMANDES' | translate }}</button>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="image-bg-greeting"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="attendance" *ngIf="permission >= 4">
+                <div class="row">
+                    <div class="col-md-4 attendance-percentage-office">
+                            <div class="users-attendance">
+                                <div class="attendance-percentage" style="margin-bottom: 30px;">
+                                    <p class="percentage"> {{attendancePercentage}} %</p>
+                                    <p class="msg">{{msgAttendance}}</p>
+                                </div>
+                                <div class="attendance-lign-100-total"></div>
+                                <div class="attendance-lign-total" [ngStyle]="{'width':attendancePercentage +'%'}"></div>
+                            </div>
+                    </div>
+                    <div class="col-md-4 attendance-percentage-office" *ngIf="permission >= 5">
+                        <div class="users-attendance" style="background: #FFDAAD;">
+                            <p class="percentage"  > {{periodicExpensesYearly}}  $</p>
+                            <p class="msg" style="color: #37595f;">{{ 'Dashboard.depensePeriodique' | translate }}</p>
+                            <i class="fas fa-money-check-alt  chariot" style="color: #EF8200;"></i>
+                            <!-- <div class="attendance-lign-100"></div>
+                            <div class="attendance-lign" [ngStyle]="{'width':attendancePercentageHome +'%'}"></div> -->
+                        </div>
+                    </div>
+                    <div class="col-md-4 attendance-percentage-office" *ngIf="permission >= 5">
+                        <div class="users-attendance" style="background: #001833;">
+                            <p class="percentage" style="color: wheat;"> {{totalPurchasesAmount}} $</p>
+                            <p class="msg" style="color:#969fa7;">{{ 'Dashboard.totalAchat' | translate }}</p>
+                            <i class="fas fa-shopping-cart chariot" style="color: #64BC26;"></i>
+                            <!-- <div class="attendance-lign-100"></div>
+                            <div class="attendance-lign" [ngStyle]="{'width':attendancePercentageOffice +'%'}"></div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="demand" *ngIf="permission >= 4">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav">
+                        <li class="nav-item" routerLink="time-off-response">{{ 'Dashboard.Congé' | translate }}</li>
+                        <li class="nav-item" routerLink="/dashboard/exit-permission-response">{{ 'Dashboard.Sortie' | translate }}</li>
+                        <li class="nav-item" routerLink="/dashboard/purchase-response" *ngIf="permission >= 5">{{ 'Dashboard.Achat' | translate }}</li>
+                        <li class="see-more" (click)="redirectTo()" >{{ 'Dashboard.voirPlus' | translate }}</li>
+                      </ul>
+                    </div>
+                </nav>
+                <router-outlet></router-outlet>
+
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="date-time">
+                <div class="date">{{day}} &nbsp; {{myDate | date: 'mediumDate': undefined : 'fr'}}</div>
+                <div class="time">
+                    <div class="row digitalClock">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-2 digitalTime">
+                            <p class="hours">{{hour}}</p>
+                        </div>
+                        <div class="col-md-1 double-point"> 
+                            :
+                        </div>
+                        <div class="col-md-2 digitalTime">
+                            <p class="hours">{{minute}}</p>
+                        </div>
+                        <div class="col-md-1 double-point"> 
+                            :
+                        </div>
+                        <div class="col-md-2 digitalTime"> 
+                            <p class="hours">{{second}}</p>
+                        </div>
+                        <div class="col-md-3"></div>
+                </div>
+                </div>
+            </div>
+            <div class="birthday">
+                <div class="section-title">
+                    {{ 'Dashboard.Anniversaires' | translate }}
+                </div>
+                <div class="birthday-section">
+                    <div class="birthday-bg">
+                        <div class="user-birthday">
+                            <img src="../../../assets/Logo/userIMG1.jpg" class="userimg">
+                            <span>Mourad Jerbi, 28 Juin</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="team-presence" *ngIf="permission >= 3">
+                <div class="section-title">
+                    {{ 'Dashboard.EquipePrésent' | translate }}
+                </div>
+                <div class="presence-section">
+                    <div class="user-card">
+                        <!-- <div class="card">
+                            <img src="../../../assets/Logo/userIMG1.jpg" class="userimg">
+                            <span class="username">{{userFirstLast}}</span>
+                            <p style="text-overflow: ellipsis;word-wrap: break-word;">{{user?.job?.jobName}}</p>
+                        </div> -->
+                        <ng-container *ngFor="let item of todayPresenceList">
+                            <div class="card">
+                                <img src="../../../assets/Logo/userIMG1.jpg" class="userimg">
+                                <span class="username">{{item.user.firstname}}  {{item.user.lastname}}</span>
+                                <p style="text-overflow: ellipsis;word-wrap: break-word;">{{item.user.job?.jobName}}</p>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-section">
+                <div class="section-title">
+                    {{ 'Dashboard.Profil' | translate }}
+                </div>
+                <div class="profile-content">
+                    <div class="user-information">
+                        <div>
+                            <img src="../../../assets/Logo/userIMG1.jpg" class="userimg">
+                        </div>
+                        <div style="margin: auto 8px;">
+                            <span class="username">{{userFirstLast}}</span>
+                            <p class="user-role">{{userRole}}</p>
+                        </div>
+                    </div>
+                    <p>{{ 'Dashboard.ComplétezVotreProfil' | translate }}</p>
+                    <div class="profile-status">
+                        <div class="profile-part">
+                            <div class="button-done" [ngStyle]="{'background' : basicInformation ? '#EF8200':'#9E9E9E'}">
+                                <i *ngIf="basicInformation" class="far fa-check centered-icon button-content" id="i-button-content"></i> 
+                                <p *ngIf="!basicInformation" style="text-align: center;" class="button-content">?</p>
+                            </div>
+                            <p class="profile-part-label">{{ 'Dashboard.InformationsBase' | translate }}</p>
+                        </div>
+                        <div class="wire">
+                            <div class="ligne w-100" [ngStyle]="{'background' : basicInformation ? '#EF8200':'#9E9E9E'}"></div>
+                        </div>
+                        <div class="profile-part">
+                            <div class="button-done" style="background: '#EF8200';"><i class="far fa-check centered-icon button-content" id="i-button-content"></i></div>
+                            <p class="profile-part-label">{{ 'Dashboard.Poste' | translate }}</p>
+                        </div>
+                        <div class="wire">
+                            <div>
+                                <div class="ligne w-100" [ngStyle]="{'background' : socialMediaInformation ? '#EF8200':'#9E9E9E'}"></div>
+                            </div>
+                        </div>
+                        <div class="profile-part">
+                            <div class="button-done" [ngStyle]="{'background' : socialMediaInformation ? '#EF8200':'#9E9E9E'}">
+                                <i *ngIf="socialMediaInformation" class="far fa-check centered-icon button-content" id="i-button-content"></i> 
+                                <p *ngIf="!socialMediaInformation" class="button-content" style="text-align: center;">?</p>
+                            </div>
+                            <p class="profile-part-label">{{ 'Dashboard.RéseauSocial' | translate }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

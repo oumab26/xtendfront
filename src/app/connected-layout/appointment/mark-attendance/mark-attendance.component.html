@@ -1,0 +1,83 @@
+<div class="row">
+
+    <div class="col-md-5">
+        <h1 class="titre">{{ 'MarkAttendance.HeureActuelle' | translate }}</h1>
+        <div class="row digitalClock">
+                <div class="col-md-4"></div>
+                <div class="col-md-2 digitalTime"><p class="hours">{{hour}}</p></div>
+                    <div class="col-md-1 "> 
+                        <div class=" row point cercle"></div>
+                        <div class=" row point cercle"></div>
+                    </div>
+                <div class="col-md-2 digitalTime"><p class="hours">{{minute}}</p></div>
+                    <div class="col-md-1 "> 
+                        <div class=" row point cercle"></div>
+                        <div class=" row point cercle"></div>
+                    </div>
+                <div class="col-md-2 digitalTime"> <p class="hours">{{second}}</p></div>
+        </div>
+    </div>&nbsp;
+    
+    <div class="col-md-1 vertical-line "></div>
+    <div class="col-md-4 digitalDate ">
+        <div style=" margin-bottom: 4%;">{{day}} </div>
+        <div>{{myDate | date: 'mediumDate': undefined : 'fr'}}</div>
+    </div>
+</div>
+
+<div class="row pointage">
+    <div class="col-md-5">
+        <div class="form-group">
+            <button type="submit" class="btn-sign btn-sign-in" (click)="clockIn()">{{ 'MarkAttendance.ClockIn' | translate }}</button>
+          </div>
+ 
+    </div>
+  
+    <div class="col-md-5">
+        <div class="form-group">
+            <button type="submit" class="btn-sign btn-sign-in" (click)="clockOut()">{{ 'MarkAttendance.ClockOut' | translate }}</button>
+          </div>
+    </div>
+</div>
+
+<div class="row">
+   
+   
+        <h4 style="text-align: center;">{{ 'MarkAttendance.Travailleà' | translate }}</h4>
+       
+       
+            <select class="form-control" >
+                
+              <option>{{ 'MarkAttendance.Bureau' | translate }}</option>
+              <option>{{ 'MarkAttendance.Maison' | translate }}</option>
+            </select>
+
+            <i class="fas fa-chevron-down chevronDown"></i>
+</div>
+  
+
+
+<section class="">
+    <h3 class="section-title">{{ 'MarkAttendance.Votrefréquentation' | translate }}</h3>
+    <div class="lign"></div>
+    <div class="row tab">
+        <div class="col-md-3 colonTitle">{{ 'MarkAttendance.Date' | translate }}</div>
+        <div class="col-md-3 colonTitle">{{ 'MarkAttendance.Statut' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'MarkAttendance.ClockIn' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'MarkAttendance.ClockOut' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'MarkAttendance.Details' | translate }}</div>
+
+    </div>
+
+    <div class="row tabElements" *ngFor="let myWeeklyTiming of myWeeklyTimings">
+        <div class="col-md-3 colonTitle">{{myWeeklyTiming.date[0]}} /{{myWeeklyTiming.date[1]}} /{{myWeeklyTiming.date[2]}}  </div>
+        <div class="col-md-3 colonTitle">{{myWeeklyTiming.status}}</div>
+        <div class="col-md-2 colonTitle"><span *ngIf="myWeeklyTiming.clockIn">{{myWeeklyTiming.clockIn[0]}}:{{myWeeklyTiming.clockIn[1]}}:{{myWeeklyTiming.clockIn[2]}}</span></div>
+        <div class="col-md-2 colonTitle"><span *ngIf="myWeeklyTiming.clockOut">{{myWeeklyTiming.clockOut[0]}}:{{myWeeklyTiming.clockOut[1]}}:{{myWeeklyTiming.clockOut[2]}}</span></div>
+        <div class="col-md-2 colonTitle">-</div>
+        <div class="lign"></div>
+    </div>
+
+    
+</section>
+

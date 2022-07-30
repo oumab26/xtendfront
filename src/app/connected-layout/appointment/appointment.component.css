@@ -1,0 +1,45 @@
+
+
+.nav-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-right: 4px; */
+    width: 30%;
+    height: 34px;
+    /* text-decoration: underline; */
+    color: #0075D6;
+    cursor: pointer;
+    text-align: center;
+    background: #CEDFED;
+
+}
+
+ul,ol,dl,p {
+    font-size: 14px;
+  }
+  
+
+
+.nav-item:hover{
+    background: #0075D6;
+    box-shadow: 3px 3px 5px rgba(0, 117, 214, 0.25);
+    border-radius: 8px;
+    color: #F7F9FC;
+    border-radius: 16px 16px 0px 0px;
+    text-align: center;
+}
+
+.navbar-nav{
+    width: 100%;
+    display: flex;
+
+    justify-content: space-between;
+
+}
+
+ 
+ 
+
+
+

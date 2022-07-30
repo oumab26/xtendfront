@@ -1,0 +1,65 @@
+section{
+    margin-bottom: 30px;
+}
+
+.lign{
+    background-color:#0075D6 ;
+    height: 1px;
+    width: 100%;
+    margin-top: 4px;
+}
+.section-title{
+    color: #0075D6;
+    font-weight: bold;
+    margin-bottom: 0px;
+    text-align: left;
+}
+
+
+
+.tab{
+    background-color: #F5FAFF;
+    width: 100%;
+    margin: auto;
+    height: 50px;
+}
+.colonTitle{
+    font-size: 20px;
+    margin-top: 17px;
+}
+.tabElements{
+    width: 100%;
+    margin: auto;
+    height: 50px;
+}
+
+
+
+.form-control{
+    width: 100%;
+    border-color:#0075D6 ;
+    background-color: #F5FAFF;
+    border-radius: 10px;
+}
+
+.section-title{
+    color: #0075D6;
+    font-weight: bold;
+    text-align: right;
+    margin-bottom: 0px;
+    width: 22%;
+    text-align: left;
+}
+.inputs{
+    margin-bottom: 10px;
+}
+
+.rejected{
+    color:#EA1601;
+}
+.accepted{
+    color:#64BC26;
+}
+.pending{
+    color:#FAD202;
+}

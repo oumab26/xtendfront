@@ -1,0 +1,185 @@
+<section >
+    <div class="row">
+        <div class="col-md-10"></div>
+        <div class="col-md-2">
+            <button type="submit" class="btn-sign btn-sign-in" (click)="showmodal()">{{ 'periodicExpenses.AjouterDépense' | translate }}</button>
+        </div>
+    </div>
+
+    <h3 class="section-title">{{ 'periodicExpenses.ListeFournisseurs' | translate }}</h3>
+    <div class="lign"></div>
+    <div class="row tab">
+        <div class="col-md-3 colonTitle">{{ 'periodicExpenses.NomDépense' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'periodicExpenses.PériodeTemps' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'periodicExpenses.Montant' | translate }}</div>
+        <div class="col-md-3 colonTitle">{{ 'periodicExpenses.Remarque' | translate }}</div>
+        <div class="col-md-2 colonTitle">{{ 'periodicExpenses.Action' | translate }}</div>
+    </div>
+
+    <div class="row tabElements" *ngFor="let item of periodicExpenses">
+        <div class="col-md-3 colonTitle">{{item.name}}</div>
+        <div class="col-md-2 colonTitle">{{item.period | titlecase}}</div>
+        <div class="col-md-2 colonTitle">{{item.amount}}</div>
+        <div class="col-md-3 colonTitle">{{item.note}}</div>
+        <div class="col-md-2 colonTitle">
+            <span class="edit" (click)="goToUpdateEpenses(item.periodicExpensesId)"></span>
+            <span class="delete" (click)="deleteEpenses(item.periodicExpensesId)"></span>
+        </div>
+        <div class="lign"></div>
+    </div>
+    
+
+</section>
+
+
+<!--add periodic expenses Modal-->
+<div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog2">
+        <div class="modal-content modal-style">
+            <div class="modal-header modalTitle">
+                <h3 class="section-title-modal">{{ 'periodicExpenses.AjouterDépense' | translate }}</h3>
+
+
+            </div>
+            <div class="lign-modal"></div>
+
+            <form [formGroup]="PeriodicDepenseForm" (ngSubmit)="addExpenses()">
+                <div class="modal-body">
+
+                    <div class="row inputs">
+                        <div class="col-md-3">
+                            <label class="input-title">{{ 'periodicExpenses.TitreDépense' | translate }}</label>
+                        </div>
+                        <div class="col-md-9 ">
+                            <input type="text" class="form-control" formControlName="name" />
+                        </div>
+                    </div>
+
+                    <div class="row inputs">
+                        <div class="col-md-3">
+                            <label class="input-title">{{ 'periodicExpenses.LaPériode' | translate }}</label>
+                        </div>
+                        <div class="col-md-9 ">
+                            <select name="" class="form-control"  formControlName="period">
+                                <option value="0">{{ 'periodicExpenses.Hebdomadaire' | translate }}</option>
+                                <option value="1">{{ 'periodicExpenses.Bimensuel' | translate }}</option>
+                                <option value="2">{{ 'periodicExpenses.Mensuel' | translate }}</option>
+                                <option value="3">{{ 'periodicExpenses.Bimestriel' | translate }}</option>
+                                <option value="4">{{ 'periodicExpenses.Trimestriel' | translate }}</option>
+                                <option value="5">{{ 'periodicExpenses.Semestriel' | translate }}</option>
+                                <option value="6">{{ 'periodicExpenses.Annuel' | translate }}</option>
+                            </select>
+                            <i class="fas fa-chevron-down chevronDown"></i>
+                        </div>
+                    </div>
+
+                    <div class="row inputs">
+                        <div class="col-md-3">
+                            <label class="input-title">{{ 'periodicExpenses.Remarque' | translate }}</label>
+                        </div>
+                        <div class="col-md-9 ">
+                            <input type="text" class="form-control" formControlName="note" />
+                        </div>
+                    </div>
+
+                    <div class="row inputs">
+                        <div class="col-md-3">
+                            <label class="input-title">{{ 'periodicExpenses.Montant' | translate }}</label>
+                        </div>
+                        <div class="col-md-9 ">
+                            <input type="number" class="form-control" formControlName="amount" />
+                        </div>
+                    </div>
+
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-retour" (click)="hideModal()">
+                        {{ 'periodicExpenses.ANNULER' | translate }}
+                    </button>
+                    <button type="submit" class="btn btn-valid">
+                        {{ 'periodicExpenses.AJOUTER' | translate }}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--end add priodic expenses modal-->
+
+<!--update periodic expenses Modal-->
+<div [style.display]="showModalUpdate ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog2">
+        <div class="modal-content modal-style">
+            <div class="modal-header modalTitle">
+                <h3 class="section-title-modal">{{ 'periodicExpenses.ModifierDépense' | translate }}</h3>
+
+
+            </div>
+            <div class="lign-modal"></div>
+
+            <form [formGroup]="UpdatePeriodicDepenseForm" (ngSubmit)="updateExpenses()">
+                <div class="modal-body">
+
+                    <div class="row inputs">
+                        <div class="col-md-3">
+                            <label class="input-title">{{ 'periodicExpenses.TitreDépense' | translate }}</label>
+                        </div>
+                        <div class="col-md-9 ">
+                            <input type="text" class="form-control" formControlName="name" />
+                        </div>
+                    </div>
+
+                    <div class="row inputs">
+                        <div class="col-md-3">
+                            <label class="input-title">{{ 'periodicExpenses.LaPériode' | translate }}</label>
+                        </div>
+                        <div class="col-md-9 ">
+                            <select name="" class="form-control" id="" formControlName="period">
+                                <option value="0">{{ 'periodicExpenses.Hebdomadaire' | translate }}</option>
+                                <option value="1">{{ 'periodicExpenses.Bimensuel' | translate }}</option>
+                                <option value="2">{{ 'periodicExpenses.Mensuel' | translate }}</option>
+                                <option value="3">{{ 'periodicExpenses.Bimestriel' | translate }}</option>
+                                <option value="4">{{ 'periodicExpenses.Trimestriel' | translate }}</option>
+                                <option value="5">{{ 'periodicExpenses.Semestriel' | translate }}</option>
+                                <option value="6">{{ 'periodicExpenses.Annuel' | translate }}</option>
+                            </select>
+                            <i class="fas fa-chevron-down chevronDown"></i>
+                        </div>
+                    </div>
+
+                    <div class="row inputs">
+                        <div class="col-md-3">
+                            <label class="input-title">{{ 'periodicExpenses.Remarque' | translate }}</label>
+                        </div>
+                        <div class="col-md-9 ">
+                            <input type="text" class="form-control" formControlName="note" />
+                        </div>
+                    </div>
+
+                    <div class="row inputs">
+                        <div class="col-md-3">
+                            <label class="input-title">{{ 'periodicExpenses.Montant' | translate }}</label>
+                        </div>
+                        <div class="col-md-9 ">
+                            <input type="number" class="form-control" formControlName="amount" />
+                        </div>
+                    </div>
+
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-retour" (click)="hideModal()">
+                        {{ 'periodicExpenses.ANNULER' | translate }}
+                    </button>
+                    <button type="submit" class="btn btn-valid">
+                        {{ 'periodicExpenses.AJOUTER' | translate }}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--end update priodic expenses modal-->

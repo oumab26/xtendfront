@@ -1,0 +1,19 @@
+
+<section class="first-title">
+  {{ 'appointment.Présence' | translate }}
+</section>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li *ngIf="permission>=1" class="nav-item" routerLink="/appointment/mark-attendance">{{ 'appointment.Pointage' | translate }}</li>
+   
+        <li *ngIf="permission>=4" class="nav-item" routerLink="/appointment/attendance-history">{{ 'appointment.Présence' | translate }}</li>
+     
+        <li *ngIf="permission>=2" class="nav-item" routerLink="/activity-report">{{ 'connectedLayout.sideBar.activity-report' | translate }}</li>
+     
+
+      </ul>
+    </div>
+</nav>
+
+<router-outlet></router-outlet>

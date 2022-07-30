@@ -1,0 +1,216 @@
+<section class="first-title">
+  {{ 'TEAM.Equipe' | translate }}
+  <div  style="align-content: left;position:absolute; left:980px; ">
+    <img src="../../../assets/icons/teamicon (1).svg" style="width: 30px; top: 00px;
+   ">
+     <img src="../../../assets/icons/teamicon (2).svg" style="width: 30px; top: 00px;
+     ">
+   </div>
+</section>
+
+
+<div class="row">
+  <div class="col-md-11"></div>
+  <div class="col-md-12" *ngIf="isPermitted">
+    <div style="background: #CEDFED;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;color: #0075D6; height: 0.80cm;   text-align: center;font-weight: 700;
+font-size: 12px;
+line-height: 17px; " (click)="showModalAjouterEmploye()">{{ "+ AJOUTER DÉPARTEMENT" }}</div>
+  </div>
+
+  <!--add-user Modal-->
+  <div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog2">
+      <div class="modal-content modal-style">
+        <div class="modal-header modalTitle">
+          <h3 class="section-title-modal">{{ 'TEAM.AjouterEmployé' | translate }}</h3>
+
+
+        </div>
+        <div class="lign-modal"></div>
+
+        <form [formGroup]="ajouterEmployeForm" (ngSubmit)="addUser()">
+          <div class="modal-body">
+
+            <div class="row inputs">
+              <div class="col-md-3">
+                <label class="input-title"> {{ 'TEAM.Nom' | translate }} </label>
+              </div>
+              <div class="col-md-9 ">
+                <input type="text" class="form-control" formControlName="lastname" />
+              </div>
+            </div>
+
+            <div class="row inputs">
+              <div class="col-md-3">
+                <label class="input-title"> {{ 'TEAM.Prénom' | translate }} </label>
+              </div>
+              <div class="col-md-9 ">
+                <input type="text" class="form-control" formControlName="firstname" />
+              </div>
+            </div>
+
+            <div class="row inputs">
+              <div class="col-md-3">
+                <label class="input-title"> {{ 'TEAM.email' | translate }} </label>
+              </div>
+              <div class="col-md-9 ">
+                <input type="text" class="form-control" formControlName="email" />
+              </div>
+            </div>
+
+            <div class="row inputs">
+              <div class="col-md-3">
+                <label class="input-title">{{ 'TEAM.PosteOccupée' | translate }}</label>
+              </div>
+              <div class="col-md-9 ">
+                <select class="form-control" formControlName="jobId">
+                  <option *ngFor="let job of jobs" value="{{job.jobId}}">
+                    {{job.jobName}}
+                  </option>
+                </select>
+                <i class="fas fa-chevron-down chevronDown"></i>
+              </div>
+            </div>
+
+            <div class="row inputs">
+              <div class="col-md-3">
+                <label class="input-title"> {{ 'TEAM.Département' | translate }}</label>
+              </div>
+              <div class="col-md-9">
+                <select class="form-control" formControlName="department">
+                  <option *ngFor="let department of departments" value="{{department.departmentId}}">
+                    {{department.departmentName}}
+                  </option>
+                </select>
+                <i class="fas fa-chevron-down chevronDown"></i>
+              </div>
+             
+            </div>
+
+            <div class="row inputs">
+              <div class="col-md-3">
+                <label class="input-title"> {{ 'TEAM.Rôle' | translate }}</label>
+              </div>
+              <div class="col-md-9 d-flex justify-content-between">
+                <select class="form-control" formControlName="role">
+                  <option *ngFor="let role of roles" value="{{role.roleName}}">
+                    {{role.roleName}}
+                  </option>
+                </select>
+                <i class="fas fa-chevron-down chevronDown"></i>
+              </div>
+            </div>
+
+            <div class="row inputs">
+              <div class="col-md-3">
+                <label class="input-title"> {{ 'TEAM.marquePrésence' | translate }}</label>
+              </div>
+              <div class="col-md-9 ">
+                <input class="form-check-input" style="margin-left: 12px;" type="checkbox"formControlName="doPresence" checked>
+              </div>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+                <button type="button" class="btn btn-retour" (click)="hideAboutModal()">
+                  {{ 'TEAM.ANNULER' | translate }}
+                </button>
+                <button type="submit" class="btn btn-valid"  >
+                  {{ 'TEAM.AJOUTER' | translate }}
+                </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!--end add-user modal-->
+
+</div>
+
+<!--delete-user Modal-->
+<div [style.display]="showDeleteModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog"
+aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog1 modal-dialog-centered modal-dialog2">
+  <div class="modal-content delete-modal-style">
+    <div class="modal-header modalTitle">
+      <div class="corbeille"><i class="fas fa-trash-alt trash"></i></div>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="hidedeletModal()">
+        <span aria-hidden="true" >&times;</span>
+      </button>
+      
+    </div>
+    
+    <div class="modal-body trash-body">
+      <div> {{ 'TEAM.supprimerElément' | translate }}</div>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-annuler" (click)="hidedeletModal()">
+        {{ 'TEAM.ANNULER' | translate }}
+      </button>
+      <button type="button" class="btn btn-supprim" (click)="deleteUser()" >
+        {{ 'TEAM.SUPPRIMER' | translate }} 
+      </button>
+</div>
+  </div>
+</div>
+</div>
+<!--end delete-user modal-->
+
+<ng-container *ngIf="isPermitted" >
+  <section class="departement" *ngFor="let department of departments" >
+    <h3 class="section-title">{{department.departmentName}}</h3>
+
+    <div class="lign"></div>
+
+    <div class="users">
+      <div class="user-card" *ngIf="isPermitted">
+        <div class="card add-user" style="border-color: #001833">
+          <i class="fas fa-user-plus icon-userPlus" (click)="showModalByDepartment(department)"></i>
+        </div>
+      </div>
+      <div class="user-card" *ngFor="let user of department.users">
+        <div class="card">
+          <img src="../../../assets/Logo/userIMG1.jpg" class="userimg">
+          <span class="username">{{user.firstname}}&nbsp;{{user.lastname}}</span>
+          <p class="userjob" *ngIf="user.job">{{user.job.jobName}}</p>
+          <div class="overlay">
+            <div *ngIf="isPermitted" class="d-flex justify-content-between " >
+              <i class="fas fa-user-cog icon-userCog" (click)="viewProfile(user.userId)"></i>
+              <i class="fas fa-user-times icon-userTimes" (click)="showModalSupprimerEmploye(user.userId)" ></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</ng-container>
+
+<ng-container *ngIf="!isPermitted" >
+  <section class="departement" *ngFor="let department of departments">
+    <h3 class="section-title">{{department.departmentName}}</h3>
+
+    <div class="lign"></div>
+
+    <div class="users">
+      <ng-container *ngIf="department===userDepartment">
+        <div class="user-card" *ngFor="let user of department.users">
+          <div class="card">
+            <img src="../../../assets/Logo/userIMG1.jpg" class="userimg">
+            <span class="username">{{user.firstname}}&nbsp;{{user.lastname}}</span>
+            <p class="userjob" *ngIf="user.job">{{user.job.jobName}}</p>
+            <div class="overlay">
+              <div *ngIf="isPermitted" class="d-flex justify-content-between " >
+                <i class="fas fa-user-cog icon-userCog" (click)="viewProfile(user.userId)"></i>
+                <i class="fas fa-user-times icon-userTimes" (click)="showModalSupprimerEmploye(user.userId)" ></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </section>
+</ng-container>

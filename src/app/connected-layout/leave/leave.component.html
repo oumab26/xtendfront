@@ -1,0 +1,15 @@
+<section class="first-title">
+  {{ 'LEAVE.Autorisation' | translate }}
+</section>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li *ngIf="permission>=3" class="nav-item" routerLink="/leave/timeOff">{{ 'LEAVE.Congé' | translate }}</li>
+        <li *ngIf="permission>=1" class="nav-item" routerLink="/leave/exit-permission">{{ 'LEAVE.Sortie' | translate }}</li>
+        <li *ngIf="permission>=4" class="nav-item" routerLink="/leave/leave-response">{{ 'LEAVE.ApprobationsAttente' | translate }}</li>
+        <li *ngIf="permission>=4" class="nav-item" routerLink="/leave/global-view">{{ 'LEAVE.VueGlobal' | translate }}</li>
+      </ul>
+    </div>
+</nav>
+<router-outlet></router-outlet>
+

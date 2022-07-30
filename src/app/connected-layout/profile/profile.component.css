@@ -1,0 +1,164 @@
+.button-done{
+    position: relative;
+    height: 40px;
+    width: 40px;
+    border-radius: 29px;
+}
+.ligne{
+    height: 4px;
+    margin-top: 12px;
+    width: 100%;
+}
+
+.centered-icon{
+    position: absolute;
+    top:8px;
+    left:23px;
+}
+.section-title{
+    color: #0075D6;
+    font-weight: bold;
+    margin-bottom: 0px;
+    width: 19%;
+    text-align: right;
+}
+.lign{
+    background-color:#0075D6 ;
+    height: 1px;
+    width: 100%;
+    margin-top: 4px;
+}
+.complete-profile{
+    margin-bottom: 55px;
+}
+.poste{
+    margin-top: 55px;
+}
+.Reseaux-sociaux{
+    margin-top: 55px; 
+}
+.securite{
+    margin-top: 55px;  
+}
+.user-info{
+    margin-bottom: 100px;
+}
+.input-title{
+    text-align: left;
+    font-weight: bold;
+    margin-right: 21%; 
+    margin-top: 3%;
+}
+
+ .user-info-input{
+    width: 50%;
+}  
+.pen-position{
+    margin-top: 10px;
+    margin-left: 45%;  
+}
+
+.pen-color{
+    color: white;
+}
+.pen-color:hover{
+    color: #EF8200;
+    cursor: pointer;
+}
+.inputs{
+    margin-top:30px;
+    text-emphasis: right;
+}
+
+.inputs input{
+    border: none;
+    background-color: white;
+    height: 80%;
+    border-radius: 7px;
+}
+.inputs input:focus{
+    background-color: #F5FAFF;
+    border: 1px solid #0075D6;
+}
+
+ .input-selected{
+    border: none;
+    background-color: white;
+}
+.input-not-selected{
+    border-color: #0075D6;
+    background-color: #F5FAFF;
+}
+
+
+.col-md-3 {
+    text-align: end;
+    max-width: 25%;
+}
+
+.check{
+    background: url(../../../assets/icons/check.svg) no-repeat left center;
+    background-size: contain;
+    height: 37px;
+    width: 50px;
+    margin: auto;
+    position: absolute;
+    left: 55%;
+    bottom: 1%;
+}
+
+
+.cancel{
+    background: url(../../../assets/icons/cancel.svg) no-repeat left center;
+    background-size: contain;
+    height: 37px;
+    width: 50px;
+    margin: auto;
+    position: absolute;
+    left: 61%;
+    bottom: 1%;
+}
+.btn-valid{
+    border-radius: 35px;
+    background-color: #0075D6;
+    color: white;
+    width: 21%;
+    margin-bottom: 15px;
+}
+
+.centered-icon{
+    position: absolute;
+    top:8px;
+    left:23px;
+}
+.button-content{
+    text-align: center;
+    color: white;
+    font-size: x-large;
+}
+
+ #i-button-content{
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+
+.profile-status{
+    width:100%;
+    display: inline-flex;
+    padding-left: 35px;
+    padding-right:12px;
+}
+.profile-part{
+    width:3%;
+}
+.wire{
+    width: 44%;
+    margin-left: -10px;
+    margin-top: 4px;
+}
+
+.profile-part-label{
+    text-align: left;
+    width: fit-content;
+}

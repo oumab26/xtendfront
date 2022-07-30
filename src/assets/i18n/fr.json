@@ -1,0 +1,412 @@
+{
+    "LOGIN": {
+      "title": "Connexion",
+      "emailInput": "Nom d'utilisateur ou Email",
+      "passwordInput": "Mot de passe",
+      "resterConnecte": "Rester connecté",
+      "mdpOublie":"Mot de passe oublié?",
+      "btnConnecter": "Se connecter",
+      "btnCreer": "Créer compte",
+      "btn":"en",
+      "Inscription":"Inscription",
+      "VousNavezPasCompte":"Vous n'avez pas un compte?"
+
+    },
+
+    "LOGININPUT":{
+      "emailInput":"User.user@user.com",
+      "passwordInput":"Entrer votre mot de passe"
+    },
+
+    "COMPANY": {
+      "Coordonnéesgernerale":"Coordonnées gernerale",
+      "nomResponsable":"Nom du responsable",
+      "prenomResponsable":"Prénom",
+      "nomEntrepriseInput": "Nom de l'entreprise",
+      "nbrEmployeInput": "Nombre d'employés",
+      "de":"De",
+      "employés":"employés",
+      "Plusque":"Plus que",
+      "continueButton":"Continue",
+      "activiteEntrepriseInput": "Activité de l'entreprise",
+      "phoneInput":"Numéro de téléphone",
+      "adresseInput": "Adresse",
+      "userName":"Nom d'utlisateur",
+      "adresseMail":"Adresse email",
+      "condition":"J'accepte les termes et conditions.",
+      "VousAvezCompte":"Vous avez déjà un compte?",
+      "Entreprise":"Entreprise",
+      "Compte":"Compte"
+    },
+   
+    "companyPlaceholders":{
+      "nomResponsable":"Entrer votre nom",
+      "prenomResponsable":"Entrer votre prénom",
+      "nomEntrepriseInput": "Entrer le Nom de votre entreprise",
+      "activiteEntrepriseInput": "Entrer l'activité de votre entreprise",
+      "phoneInput":"Entrer votre numéro de téléphone",
+      "adresse":"Entrer votre adresse",
+      "userName":"Entrer votre nom d'utlisateur",
+      "adresseMail":"Userbenuser@gmail.com",
+      "password":"Entrer votre mot de passe"
+    },
+
+    "sideBar": {
+      "Dashboard": "Dashboard",
+      "Equipe": "Equipe",
+      "Présence": "Présence",
+      "Autorisation": "Autorisation",
+      "Dépenses":"Dépenses",
+      "Salaires": "Salaires",
+      "Planification": "Planification",
+      "Recherche":"Recherche...",
+      "userName":"User User"
+    },
+    
+    "resetPassword":{
+      "undertitle1":"Vous allez recevoir un code sur cette adresse.",
+      "seSouvenir":"Se souvenir du mot de passe",
+      "btnenvoyer":"envoyer",
+      "title2":"Vérification",
+      "undertitle2":"Entrez le code de vérification que nous venons de vous envoyer sur votre adresse e-mail.",
+      "pasDeCode":"Vous n'avez pas reçu de code !",
+      "btnRenvoyer":"Renvoyer",
+      "creerNvPassword":"Créer un nouveau mot de passe",
+      "notifNvPassword":"Votre nouveau mot de passe doit être différent du mot de passe précédemment utilisé",
+      "nvPassword":"Nouveau mot de passe",
+      "confirmerPassword":"Confirmez le mot de passe",
+      "btnSauvegarder":"Sauvegarder"
+
+    },
+
+    "connectedLayout":{
+
+      "sideBar": {
+      "Dashboard": "Dashboard",
+      "Equipe": "Equipe",
+      "Présence": "Présence",
+      "Autorisation": "Autorisation",
+      "Dépenses":"Dépenses",
+      "activity-report":"Compte rendu d'activité",
+      "Recherche":"Recherche...",
+      "userName":"User User"
+      },
+
+      "SeDéconnecter":"Se déconnecter",
+      "Logout":"Déconnexion",
+      "Profile":"Profil",
+      "ResetPassword":"Changer mot de passe",
+      "RéglageEntreprise":"Réglage Entreprise"
+    },
+    "appointment":{
+      "Présence":"Présence",
+      "Pointage":"Pointage"
+    },
+    "ATTENDANCE":{
+      "Aujourdhui":"Aujourd'hui",
+      "Hier":"Hier",
+      "CetteSemaine":"Cette semaine",
+      "semainePrécédente":"La semaine précédente",
+      "CeMois":"Ce Mois",
+      "moisPrécédent":"Le mois précédent",
+      "Absence":"Absence",
+      "Préssence":"Présence",
+      "Département":"Département",
+      "Travailleà":"Travaille à",
+      "Bureau":"Bureau",
+      "voirPlus":"voir plus",
+      "clockIn":"clock In",
+      "clockout":"clock out"
+    },
+    "MarkAttendance":{
+      "HeureActuelle":"Heure actuelle",
+      "ClockIn":"Clock In",
+      "ClockOut":"Clock Out",
+      "Travailleà":"Travaille à",
+      "Bureau":"Bureau",
+      "Maison":"Maison",
+      "Votrefréquentation":"Votre fréquentation de cette semaine",
+      "Date":"Date",
+      "Statut":"Statut",
+      "Details":"Détails"
+    },
+
+    "CompanySettings":{
+      "InformationsBase":"Informations de base",
+      "NomEntreprise":"Nom d'entreprise",
+      "AdresseEmail":"Adresse email",
+      "NuméroTéléphone":"Numéro de téléphone",
+      "Adresse":"Adresse",
+      "ActivitéEntreprise":"Activité de l'entreprise",
+      "NombreEmployés":"Nombre d'employés",
+      "HoraireTravail":"Horaire du travail",
+      "NombreCongé":"Nombre de jours de congé",
+      "LesRepos":"Les jours de repos",
+      "Poste":"Poste",
+      "LesPostes":"Les Postes",
+      "LesDepartements":"Les Departements",
+      "LesRôles":"Les rôles"
+    },
+
+    "Dashboard":{
+      "Bonjour":"Bonjour",
+      "VousAvezDesnouvellesDemandes":"Aujourd'hui vous avez des nouvelles demandes.",
+      "VérifierDemandes":"Vous devez vérifier les demandes des congés et les sorties.",
+      "VOIRLESDEMANDES":"VOIR LES DEMANDES",
+      "TravailDomicile":"Travail à domicile",
+      "TravaillerBureau":"Travail au bureau",
+      "Congé":"Congé",
+      "Sortie":"Sortie",
+      "Achat":"Achat",
+      "voirPlus":"voir plus",
+      "Anniversaires":"Anniversaires d'aujourd'hui",
+      "EquipePrésent":"Equipe présent",
+      "Profil":"Profil",
+      "ComplétezVotreProfil":"Complétez votre profil",
+      "InformationsBase":"Informations de base",
+      "Poste":"Poste",
+      "RéseauSocial":"Réseau social",
+      "ans":"ans",
+      "totalAchat":"Total d'achat",
+      "depensePeriodique":"Dépense périodique par an"
+    },
+
+    "exitPermissionResponse":{
+      "Nom":"Nom",
+      "DateSortie":"Date de sortie",
+      "De":"De",
+      "À":"À",
+      "Raison":"Raison",
+      "Action":"Action"
+    },
+
+    "purchaseResponse":{
+      "Nom":"Nom",
+      "Produit":"Produit",
+      "Prix":"Prix",
+      "Quantité":"Quantité",
+      "Fournisseur":"Fournisseur",
+      "Action":"Action"
+    },
+
+    "timeOffResponse":{
+      "Nom":"Nom",
+      "DateSortie":"Date de sortie",
+      "NombreJours":"Nombre des jours",
+      "Type":"Type",
+      "Raison":"Raison",
+      "Action":"Action"
+    },
+
+    "EXPENSES":{
+      "Achats":"Achats",
+      "ApprobationsAttente":"Approbations en attente",
+      "DépensesPériodiques":"Dépenses périodiques",
+      "Fournisseurs":"Fournisseurs"
+    },
+
+    "periodicExpenses":{
+      "AjouterDépense":"Ajouter une dépense",
+      "ListeFournisseurs":"La liste des Fournisseurs",
+      "NomDépense":"Nom de dépense",
+      "PériodeTemps":"Période du temps",
+      "Montant":"Montant",
+      "Remarque":"Remarque",
+      "Action":"Action",
+      "TitreDépense":"Titre de dépense",
+      "LaPériode":"La période",
+      "Hebdomadaire":"Hebdomadaire",
+      "Bimensuel":"Bimensuel",
+      "Mensuel":"Mensuel",
+      "Bimestriel":"Bimestriel",
+      "Trimestriel":"Trimestriel",
+      "Semestriel":"Semestriel",
+      "Annuel":"Annuel",
+      "ANNULER":"ANNULER",
+      "AJOUTER":"AJOUTER",
+      "ModifierDépense":"Modifier dépense"
+    },
+
+    "providers":{
+      "ListeFournisseurs":"La liste des Fournisseurs",
+      "Nom":"Nom",
+      "Email":"Email",
+      "Adresse":"Adresse",
+      "Téléphone":"Téléphone",
+      "siteWeb":"site web",
+      "Action":"Action",
+      "AjoutFournisseur":"Ajouter fournisseur",
+      "NomFournisseur":"Nom de fournisseur",
+      "mail":"E-mail",
+      "ANNULER":"ANNULER",
+      "AJOUTER":"AJOUTER",
+      "ModifierFournisseur":"Modifier fournisseur"
+    },
+
+    "PURCHASES":{
+      "DemanderAchat":"Demander un achat",
+      "DemandeAttente":"Demande en attente",
+      "Produit":"Produit",
+      "Prix":"Prix",
+      "Quantité":"Quantité",
+      "Username":"Nom & Prénom",
+      "Lien":"Lien",
+      "Besoin":"Besoin",
+      "Fournisseur":"Fournisseur",
+      "Etat":"Etat",
+      "Action":"Action",
+      "Historique":"Historique des demandes d'achats",
+      "Date":"Date",
+      "Raison":"Raison",
+      "AJOUTER":"AJOUTER",
+      "ANNULER":"ANNULER",
+      "ModifierAchat":"Modifier achat",
+      "DemandesAchatAttente":"Demandes d'achats en attente"
+    },
+
+    "LEAVE":{
+      "Autorisation":"Autorisation",
+      "Congé":"Congé",
+      "Sortie":"Sortie",
+      "ApprobationsAttente":"Approbations en attente",
+      "VueGlobal":"Vue global"
+    },
+
+    "exitPERMISSION":{
+      "DemanderSortie":"Demander une sortie",
+      "DemandeAttente":"Demande en attente",
+      "DateSortie":"Date de sortie",
+      "De":"De",
+      "À":"À",
+      "Raison":"Raison",
+      "Etat":"Etat",
+      "historique":"Votre historique des demandes de sortie",
+      "Lesheures":"Les heures",
+      "ANNULER":"ANNULER",
+      "AJOUTER":"AJOUTER"
+    },
+
+    "GlobalView":{
+      "FiltrerPar":"Filtrer par",
+      "Absence":"Absence",
+      "Préssence":"Présence",
+      "Département":"Département",
+      "Photo":"Photo",
+      "NomPrénom":"Nom & Prénom",
+      "Poste":"Poste",
+      "JoursCongéRestant":"Jours de Congé restant",
+      "Détails":"Détails",
+      "DateDébut":"Date de début",
+      "NombreJours":"Nombre de jours",
+      "TypeCongé":"Type de congé",
+      "Raison":"Raison",
+      "Etat":"Etat"
+    },
+
+    "LeaveResponse":{
+      "DemandesSorties":"Les demandes des sorties",
+      "Photo":"Photo",
+      "NomPrénom":"Nom & Prénom",
+      "DateSortie":"Date de sortie",
+      "De":"De",
+      "À":"À",
+      "Raison":"Raison",
+      "Etat":"Etat",
+      "DemandesCongés":"Les demandes des congés",
+      "NombreJours":"Nombre de jours",
+      "Type":"Type",
+      "DateDébut":"Date de début",
+      "Action":"Action"
+    },
+
+    "TimeOff":{
+      "DemanderCongé":"Demander un congé",
+      "DemandeAttente":"Demande en attente",
+      "DateDébut":"Date de début",
+      "NombreJours":"Nombre de jours",
+      "TypeCongé":"Type de congé",
+      "Raison":"Raison",
+      "Etat":"Etat",
+      "Historique":"Historique des demandes de congés",
+      "ANNULER":"ANNULER",
+      "AJOUTER":"AJOUTER"
+    },
+
+    "profile":{
+      "ChangerMotPasse":"Changer votre mot de passe",
+      "InformationsBase":"Informations de base",
+      "Poste":"Poste",
+      "RéseauSocial":"Réseaux sociaux",
+      "Nom":"Nom",
+      "Prénom":"Prénom",
+      "Genre":"Genre",
+      "Homme":"Homme",
+      "Femme":"Femme",
+      "DateNaissance":"Date de naissance",
+      "AdresseEmail":"Adresse email",
+      "Contact":"Contact",
+      "ÉtatCivil":"État civil",
+      "Adresse":"Adresse",
+      "PosteOccupé":"Poste occupé",
+      "DateEntrée":"Date d'entrée",
+      "Rôle":"Rôle",
+      "Slack":"Slack",
+      "Discrod":"Discrod",
+      "Facebook":"Facebook",
+      "LinkedIn":"LinkedIn",
+      "CoordonnéesConnexion":"Coordonnées de connexion",
+      "NomUtilisateur":"Nom d'utilisateur",
+      "AncienMotPasse":"Ancien mot de passe",
+      "NouveauMotPasse":"Nouveau mot de passe",
+      "Confirmer":"Confirmer le mot de passe",
+
+      "ChangerRôle":"Changer le rôle",
+      "VALIDER":"VALIDER",
+      "ANNULER":"ANNULER",
+      "ChangerRole":"Etes vous sur de changer le rôle ?",
+      "consultant":"Consultant",
+      "stagiaire":"Stagiaire",
+      "manager":"Manager",
+      "ResponsableRH":"Responsable RH",
+      "employé":"Employé"
+    
+    },
+
+    "TEAM":{
+      "Equipe":"Equipe",
+      "AjouterEmployé":"Ajouter un employé",
+      "Nom":"Nom",
+      "Prénom":"Prénom",
+      "email":"email",
+      "PosteOccupée":"Poste occupée",
+      "Département":"Département",
+      "Rôle":"Rôle",
+      "marquePrésence":"marque sa présence",
+      "ANNULER":"ANNULER",
+      "AJOUTER":"AJOUTER",
+      "supprimerElément":"Etes vous sur de vouloir supprimer cet élément ?",
+      "SUPPRIMER":"SUPPRIMER"
+    
+    },
+
+    "ActivityReport":{
+      "CRA":"Compte rendu d'activité",
+      "Précédent":"Précédent",
+      "today":"Aujourd'hui",
+      "Next":"Suivant",
+      "Month":"Mois",
+      "Week":"Semaine",
+      "Day":"Jour",
+      "Weekend":"Week end",
+      "Oeuvré":"Oeuvré",
+      "Absent":"Absent",
+      "Congé":"Congé",
+      "Sortie":"Sortie",
+      "JourFérié":"Jour férié",
+      "EventActionOccurred":"L'action de l'événement s'est produite"
+
+    }
+
+
+
+  }

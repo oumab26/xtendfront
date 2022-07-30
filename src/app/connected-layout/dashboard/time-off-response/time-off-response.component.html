@@ -1,0 +1,27 @@
+<section class="">
+    <div class="lign1"></div>
+    <div class="row tab">
+        <div class="col-md-2 colonTitle tab-head">{{ 'timeOffResponse.Nom' | translate }}</div>
+        <div class="col-md-2 colonTitle tab-head">{{ 'timeOffResponse.DateSortie' | translate }}</div>
+        <div class="col-md-2 colonTitle tab-head">{{ 'timeOffResponse.NombreJours' | translate }}</div>
+        <div class="col-md-2 colonTitle tab-head">{{ 'timeOffResponse.Type' | translate }}</div>
+        <div class="col-md-2 colonTitle tab-head">{{ 'timeOffResponse.Raison' | translate }}</div>
+        <div class="col-md-2 colonTitle tab-head">{{ 'timeOffResponse.Action' | translate }}</div>
+    </div>
+    <div class="lign2"></div>
+    
+    <div class="tab" *ngFor="let item of timeOffPendingDemands">
+        <div class="row ">
+            <div class="col-md-2 colonTitle">{{item.user.firstname}} &nbsp;{{item.user.lastname}} </div>
+            <div class="col-md-2 colonTitle"><span>{{item.startDate | date: 'dd  MMM  yyyy'}}</span></div>
+            <div class="col-md-2 colonTitle"><span>{{item.numberOfDays}}</span></div>
+            <div class="col-md-2 colonTitle">{{item.type}}</div>
+            <div class="col-md-2 colonTitle"><span>{{item.reason}}</span></div>
+            <div class="col-md-2 colonTitle">
+                <span class="check" (click)="acceptTimeOffDemand(item.id)"></span>
+                <span class="delete" (click)="rejectTimeOffDemand(item.id)"></span>
+            </div>
+        </div>
+        <div class="lign"></div>
+    </div>
+</section>
